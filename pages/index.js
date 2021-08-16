@@ -19,7 +19,7 @@ export default function Home({ posts }) {
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <div className="">
         <div className="hero-container flex">
-          <div className="me p-8">
+          <div className="me p-8 pl-0">
             <h2 className="text-5xl dark:font-black mb-5 font-medium">
               Hi, I'm <div className="text-purple-600 inline-block">Jeevan</div>
             </h2>
