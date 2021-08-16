@@ -4,6 +4,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
+import NextImage from 'next/image'
 
 const MAX_DISPLAY = 5
 
@@ -37,7 +38,62 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+
+        {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+          {
+            !posts.length && 'No posts found.'
+          }
+          const { slug, date, title, summary, tags } = frontMatter
+          return (
+            <div
+              key={slug}
+              className="p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 mb-5  transform transition duration-500 hover:-translate-y-1"
+            >
+              <div className="flex">
+                <div className="flex items-center">
+                  <NextImage
+                    width="50"
+                    height="50"
+                    alt="mountain"
+                    className="rounded-full border-2 border-gray-300"
+                    src="/static/images/ocean.jpeg"
+                  />
+                  <div className="ml-5">
+                    <p>Jeevan</p>
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={date}>{formatDate(date)}</time>
+                    </dd>
+                  </div>
+                </div>
+              </div>
+
+              <div id="body" className="flex flex-col ml-12 p-5">
+                <div className="flex flex-wrap">
+                  {tags.map((tag) => (
+                    <Tag key={tag} text={tag} />
+                  ))}
+                </div>
+                <Link id="name" className="text-xl font-semibold mb-2" href={`/blog/${slug}`}>
+                  {title}
+                </Link>
+                <p id="job" className="text-gray-800 mt-2 dark:text-white">
+                  {summary}
+                </p>
+                <div className="text-base font-medium leading-6 mt-5">
+                  <Link
+                    href={`/blog/${slug}`}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    aria-label={`Read "${title}"`}
+                  >
+                    Read more &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+
+        {/* <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
@@ -87,7 +143,7 @@ export default function Home({ posts }) {
               </li>
             )
           })}
-        </ul>
+        </ul> */}
       </div>
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
