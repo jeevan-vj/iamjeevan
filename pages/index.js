@@ -22,7 +22,10 @@ export default function Home({ posts }) {
         <div className="hero-container flex">
           <div className="me p-8 pl-0">
             <h2 className="text-5xl dark:font-black mb-5 font-medium">
-              Hi, I'm <div className="text-purple-600 inline-block">Jeevan</div>
+              Hi, I'm{' '}
+              <div className="text-purple-600 inline-block duration-500 hover:-translate-y-1">
+                Jeevan
+              </div>
             </h2>
             <h2 className="text-5xl dark:text-white-800 dark:font-black font-medium">
               Software Developer
@@ -31,9 +34,9 @@ export default function Home({ posts }) {
           <div className="picture"></div>
         </div>
       </div>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-sm text-purple-500 dark:font-black ">RECENTLY PUBLISHED</h1>
+      <div className="">
+        <div className="pt-6 pb-5 space-y-2 md:space-y-5">
+          <h1 className="text-sm text-pink-500 dark:font-black ">RECENTLY PUBLISHED</h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
@@ -45,44 +48,23 @@ export default function Home({ posts }) {
           }
           const { slug, date, title, summary, tags } = frontMatter
           return (
-            <div
-              key={slug}
-              className="p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 mb-5  transform transition duration-500 hover:-translate-y-1"
-            >
-              <div className="flex">
-                <div className="flex items-center">
-                  <NextImage
-                    width="50"
-                    height="50"
-                    alt="mountain"
-                    className="rounded-full border-2 border-gray-300 object-cover"
-                    src="/static/images/jeevan.jpg"
-                  />
-                  <div className="ml-5">
-                    <p>Jeevan</p>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
-                    </dd>
-                  </div>
-                </div>
-              </div>
-
-              <div id="body" className="flex flex-col ml-12 p-5">
-                <div className="flex flex-wrap">
-                  {tags.map((tag) => (
-                    <Tag key={tag} text={tag} />
-                  ))}
-                </div>
-                <Link id="name" className="text-xl font-semibold mb-2" href={`/blog/${slug}`}>
-                  {title}
+            <div key={slug} className="transform transition ">
+              <div id="body" className="flex flex-col">
+                <Link id="name" className="mb-2 hover:text-purple-500 " href={`/blog/${slug}`}>
+                  <h3 className="text-xl font-semibold dark:font-black font-gray-1000">{title}</h3>
                 </Link>
                 <p id="job" className="text-gray-800 mt-2 dark:text-white">
                   {summary}
                 </p>
-                <div className="text-base font-medium leading-6 mt-5">
+                <div className="flex flex-wrap mt-3">
+                  {tags.map((tag) => (
+                    <Tag key={tag} text={tag} />
+                  ))}
+                </div>
+                <div className="text-base font-medium leading-6 mt-5 duration-200 hover:translate-x-1 hover:text-purple-400">
                   <Link
                     href={`/blog/${slug}`}
-                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    className="font-white font-semibold "
                     aria-label={`Read "${title}"`}
                   >
                     Read more &rarr;
