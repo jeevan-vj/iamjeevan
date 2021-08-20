@@ -55,8 +55,8 @@ export default function Home({ posts }) {
                     width="50"
                     height="50"
                     alt="mountain"
-                    className="rounded-full border-2 border-gray-300"
-                    src="/static/images/ocean.jpeg"
+                    className="rounded-full border-2 border-gray-300 object-cover"
+                    src="/static/images/jeevan.jpg"
                   />
                   <div className="ml-5">
                     <p>Jeevan</p>
