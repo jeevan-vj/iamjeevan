@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { DiscussionEmbed } from 'disqus-react'
 
 import siteMetadata from '@/data/siteMetadata'
 
@@ -25,11 +26,18 @@ const Disqus = ({ frontMatter }) => {
       window.DISQUS.reset({ reload: true })
     }
   }
+  const disqusShortname = 'iamjeevan'
+  const disqusConfig = {
+    url: window.location.href,
+    identifier: frontMatter.slug, // Single post id
+    title: frontMatter.slug, // Single post title
+  }
 
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
-      <div className="disqus-frame" id={COMMENTS_ID} />
+      {/* {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
+      <div className="disqus-frame" id={COMMENTS_ID} /> */}
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </div>
   )
 }
