@@ -8,8 +8,6 @@ summary: 'READ UNCOMMITTED transaction isolation level and NOLOCK in SQL server'
 
 # READ UNCOMMITTED transaction isolation level and NOLOCK in SQL server
 
-Status: In progress
-
 # Overview
 
 I was working on a long-running query that will read data from a SQL DB. When other queries are running it slows down my query due to other transactions.
