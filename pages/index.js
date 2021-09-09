@@ -48,7 +48,7 @@ export default function Home({ posts }) {
           }
           const { slug, date, title, summary, tags } = frontMatter
           return (
-            <div key={slug} className="transform transition ">
+            <div key={slug} className="transform transition mb-10">
               <div id="body" className="flex flex-col">
                 <Link id="name" className="mb-2 hover:text-purple-500 " href={`/blog/${slug}`}>
                   <h3 className="text-xl font-semibold dark:font-black font-gray-1000">{title}</h3>
