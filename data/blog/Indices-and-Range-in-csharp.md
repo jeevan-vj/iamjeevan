@@ -1,6 +1,6 @@
 ---
 title: 'Indices and Ranges in C#'
-date: '2021-10-11'
+date: '2021-09-10'
 tags: ['c#']
 draft: false
 summary: 'Indices and Ranges in C#'
