@@ -1,6 +1,6 @@
 ---
 name: Jeevan Wijerathna
-avatar: /static/images/avatar.png
+avatar: /static/images/jeevan.jpg
 occupation: Software Developr
 company: iamjeevan
 email: jeevan@yiamjeevan.com
