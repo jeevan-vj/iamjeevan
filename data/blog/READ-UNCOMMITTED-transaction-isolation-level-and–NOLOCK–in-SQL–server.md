@@ -1,6 +1,6 @@
 ---
 title: 'READ UNCOMMITTED transaction isolation level and NOLOCK in SQL server'
-date: '2021-10-11'
+date: '2021-09-01'
 tags: ['sql', 'SQL server']
 draft: false
 summary: 'READ UNCOMMITTED transaction isolation level and NOLOCK in SQL server'
