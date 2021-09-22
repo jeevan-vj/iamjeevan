@@ -4,7 +4,7 @@ const siteMetadata = {
   headerTitle: 'Jeevan Wijerathna',
   description: '',
   language: 'en-us',
-  siteUrl: 'https://iamjeevan.vercel.app',
+  siteUrl: 'https://iamjeevan.com',
   siteRepo: 'https://github.com/jeevaavj/iamjeevan',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/jeevan.jpg',
