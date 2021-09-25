@@ -109,4 +109,4 @@ namespace MyNamespace { ... }         // Part 3
 
 ## Reference
 
-https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements
+[MS DOC](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)
