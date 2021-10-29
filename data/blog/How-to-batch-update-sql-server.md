@@ -1,9 +1,9 @@
 ---
 title: 'How to bacth update millions of record in SQL Server'
 date: '2021-10-29'
-tags: ['sql-server']
+tags: ['sql server']
 draft: false
-summary: 'Let's see how we can do the batch update in sql server without killing resources'
+summary: 'Lets see how we can do the batch update in sql server without killing resources'
 ---
 
 # Problem

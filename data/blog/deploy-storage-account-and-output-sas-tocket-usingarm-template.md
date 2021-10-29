@@ -1,9 +1,9 @@
 ---
-title: "Deploy storage account and output connection string with SAS token using ARM template"
-date: "2019-10-29"
+title: 'Deploy storage account and output connection string with SAS token using ARM template'
+date: '2019-10-29'
 tags: ['azure', 'arm-template']
 draft: false
-summary: 'Let's see how we can do the batch update in sql server without killing resources'
+summary: 'Deploy Azure storage account with a blob container and generate connection string with SAS token and update one of the web app’s settings with generated connection strings.'
 ---
 
 I found my self in a situation where I needed to deploy Azure storage account with a blob container and generate connection string with SAS token and update one of the web app's settings with generated connection strings.
