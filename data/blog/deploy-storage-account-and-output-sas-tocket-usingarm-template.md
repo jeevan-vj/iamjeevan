@@ -1,6 +1,6 @@
 ---
 title: 'Deploy storage account and output connection string with SAS token using ARM template'
-date: '2019-10-29'
+date: '2021-10-29'
 tags: ['azure', 'arm-template']
 draft: false
 summary: 'Deploy Azure storage account with a blob container and generate connection string with SAS token and update one of the web app’s settings with generated connection strings.'
