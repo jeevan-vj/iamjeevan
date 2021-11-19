@@ -1,4 +1,3 @@
-
 ---
 title: 'Build SQL connection string in powershell'
 date: '2021-11-16'
@@ -6,10 +5,10 @@ tags: ['Powershell', 'Code-Snippets']
 draft: false
 summary: 'Build SQL connection string in powershell using SqlConnectionStringBuilder'
 ---
-#Problem
+# Problem
 Build SQL connection string in powershell
 
-#Solution
+# Solution
 
 ```powershell
    $Server = "localhost"
