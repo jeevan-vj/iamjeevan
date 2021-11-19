@@ -1,5 +1,5 @@
 ---
-title: 'How to bacth update millions of record in SQL Server'
+title: 'How to batch update millions of record in SQL Server'
 date: '2021-10-29'
 tags: ['sql server']
 draft: false
@@ -137,5 +137,5 @@ END
 ```
 
 Reference:
-[Stackoverflow](https://stackoverflow.com/a/66792237/2260875)
-[BrentOzar](https://www.brentozar.com/archive/2020/12/how-to-batch-updates-a-few-thousand-rows-at-a-time/)
+- [Stackoverflow](https://stackoverflow.com/a/66792237/2260875)
+- [BrentOzar](https://www.brentozar.com/archive/2020/12/how-to-batch-updates-a-few-thousand-rows-at-a-time/)
