@@ -111,6 +111,7 @@ BEGIN
 
 	Update  ut SET DisplayName = u.DisplayName
 	FROM Users_Temp ut
+    JOIN #batchIds tmp ON ut.Id = tmp.Id
 	JOIN Users u
 		ON u.id = ut.id
 
