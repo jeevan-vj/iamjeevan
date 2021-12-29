@@ -1,6 +1,6 @@
 ---
 title: 'The specified DSN contains an architecture mismatch between the Driver and Application'
-date: '2021-09-28'
+date: '2021-12-29'
 tags: ['.Net', 'Fixes-for-Errors']
 draft: false
 summary: 'Fixing the issue of \' Error System.Data.Odbc.OdbcException ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application \' '
