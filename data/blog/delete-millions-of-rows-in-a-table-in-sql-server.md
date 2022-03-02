@@ -1,9 +1,9 @@
 ---
-title: 'Delete Millions of Rows in Table in SQL Server'
+title: 'Delete Millions of Rows in a Table in SQL Server'
 date: '2022-03-02'
 tags: ['Powershell', 'Code-Snippets']
 draft: false
-summary: 'Delete Millions of Rows in Table in SQL Server using'
+summary: 'Delete Millions of Rows in a Table in SQL Server using'
 ---
 
 # Problem
