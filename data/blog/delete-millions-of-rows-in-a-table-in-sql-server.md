@@ -1,7 +1,7 @@
 ---
 title: 'Delete Millions of Rows in a Table in SQL Server'
 date: '2022-03-02'
-tags: ['Powershell', 'Code-Snippets']
+tags: ['SQL', 'Code-Snippets']
 draft: false
 summary: 'Delete Millions of Rows in a Table in SQL Server using'
 ---
