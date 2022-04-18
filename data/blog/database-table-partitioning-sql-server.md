@@ -10,19 +10,18 @@ summary: 'Partition SQL Server Tables with File Groups'
 
 By Default Data of a table reside in one filegroup called Primary. Partitioning enables divide large table into units that may be spread across more than one filegroup in a database and offer fast ways to load and remove large amounts of data from a table. By splitting into smaller units, queries that access only a fraction of the data can run faster because there is less data to scan.
 
-Benefits of Partitioning
+## Benefits of Partitioning
 
-Aid in Maintenance of Large Table
+- Aid in Maintenance of Large Table
 
 Perform maintenance operations quickly because operations target only subsets of data instead of the whole table.
 
 We can transfer or access subsets of data quickly and efficiently while maintaining the integrity of a data collection.
 
 Ex.
-
 Loading data to the table (ETL)
 
-Reduce overall response time to read and load data
+- Reduce overall response time to read and load data
 
 Queries may be improved as the query might only scan a specific partition or partitions instead of the entire Table.
 
