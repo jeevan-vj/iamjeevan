@@ -1,6 +1,6 @@
 ---
 title: 'How to check installed .Net Framework versions in Powershell'
-date: '2023-02-03'
+date: '2023-02-15'
 tags: ['Powershell', 'Code-Snippets']
 draft: false
 summary: 'Checking installed .Net frameworks in Powershell'
