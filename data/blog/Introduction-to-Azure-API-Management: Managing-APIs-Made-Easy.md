@@ -2,7 +2,7 @@
 title: 'Introduction to Azure API Management: Managing APIs Made Easy'
 date: '2023-05-19'
 tags: ['Azure']
-draft: true
+draft: false
 summary: 'Azure API Management simplifies API lifecycle management, offering design flexibility, robust security features, and advanced analytics. It acts as a gateway between backend services and client applications, providing scalability and visibility into API metrics. With Azure API Management, businesses can streamline API infrastructure while ensuring security and developer productivity.'
 ---
 
