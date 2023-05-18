@@ -8,7 +8,7 @@ summary: 'Azure API Management simplifies API lifecycle management, offering des
 
 # Introduction
 
-Title: An Introduction to Azure API Management: Managing APIs Made Easy
+An Introduction to Azure API Management: Managing APIs Made Easy
 
 # Introduction:
 
