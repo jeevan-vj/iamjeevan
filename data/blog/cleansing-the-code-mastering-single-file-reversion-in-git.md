@@ -12,7 +12,7 @@ When collaborating with other developers, making changes to files unrelated to y
 
 ## Step 1: Find the Commit ID
 
-- Run the following command, replacing <path/to/file> with the actual path to the file you're interested in:
+- Run the following command, replacing `<path/to/file>` with the actual path to the file you're interested in:
 
 ```shell
 git log --follow -- <path/to/file>
