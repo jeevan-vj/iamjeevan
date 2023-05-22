@@ -1,5 +1,5 @@
 ---
-title: 'Cleansing the Code Mastering Single File Reversion in Git'
+title: 'Cleansing the Code - Mastering Single File Reversion in Git'
 date: '2023-05-23'
 tags: ['git']
 draft: false
