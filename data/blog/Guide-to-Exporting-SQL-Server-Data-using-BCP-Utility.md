@@ -1,5 +1,5 @@
 ---
-title: 'A Beginner's Guide to Exporting SQL Server Data using BCP Utility'
+title: 'Exporting SQL Server Data using BCP Utility'
 date: '2023-05-22'
 tags: ['SQL-Server']
 draft: false
