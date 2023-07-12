@@ -1,6 +1,6 @@
 ---
 title: 'Implement health check n Powershell'
-date: '2021-09-28'
+date: '2023-07-10'
 tags: ['Powershell']
 draft: false
 summary: 'Health check implementation in Powershell.'
