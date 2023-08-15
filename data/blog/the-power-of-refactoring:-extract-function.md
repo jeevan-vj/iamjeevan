@@ -1,8 +1,8 @@
 ---
-title: 'The Power of Refactoring: Extract Function'
+title: 'The Power of Refactoring Extract Function'
 date: '2023-08-13'
 tags: ['Software-Engineering', 'Refactoring']
-draft: false
+draft: false,
 summary: 'Unlock the power of software refinement with Extract Function. This vital refactoring technique involves isolating complex code fragments and molding them into concise, purpose-driven functions. By separating intent from implementation, code readability and maintainability soar. Delve into the mechanics through a C# example, witnessing how clarity and elegance thrive when code is distilled into self-explanatory functions. With Extract Function, you'll craft a codebase that's not just functional, but a masterpiece of readability and efficiency.'
 ---
 
