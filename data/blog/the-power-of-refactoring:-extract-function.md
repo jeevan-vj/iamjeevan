@@ -1,5 +1,5 @@
 ---
-title: 'The Power of Refactoring Extract Function'
+title: 'The Power of Refactoring : Extract Function'
 date: '2023-08-13'
 tags: ['Software-Engineering']
 draft: false
