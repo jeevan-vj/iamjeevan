@@ -3,7 +3,7 @@ title: 'What is synthetic monitoring'
 date: '2024-01-09'
 tags: ['Monitoring', 'APM']
 draft: false
-summary: 'Imagine having a robotic helper that constantly tests your apps to ensure they work perfectly for your customers. That's synthetic monitoring. It simulates user actions to check your app's performance, like a robot testing different parts of a car. It differs from real user monitoring, which relies on actual user interactions to gather data.'
+summary: 'Imagine having a robotic helper that constantly tests your apps to ensure they work perfectly for your customers. That is synthetic monitoring. It simulates user actions to check performance of the app, like a robot testing different parts of a car. It differs from real user monitoring, which relies on actual user interactions to gather data.'
 ---
 
 ### Introduction
