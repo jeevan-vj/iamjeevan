@@ -1,5 +1,5 @@
 ---
-title: 'Dynamically Populating Options in Manual GitHub Action Parameters'
+title: 'Dynamically Populating Parameters in Manual GitHub Action'
 date: '2024-03-20'
 tags: ['Git', 'Github', 'Github Action']
 draft: false
