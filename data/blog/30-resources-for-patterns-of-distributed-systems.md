@@ -69,3 +69,6 @@ Distributed systems are complex, requiring careful planning and design to handle
     - **Summary**: Stores every update to a value with a new version, allowing for the retrieval of historical values when necessary.
 - [**Write-Ahead Log**](https://martinfowler.com/articles/patterns-of-distributed-systems/write-ahead-log.html)
     - **Summary**: Provides durability guarantees by persisting every state change as a command to an append-only log, even before data structures are flushed to disk.
+ 
+      ## Reference
+      Official Book : [Patterns Of Distributed Systems](https://martinfowler.com/articles/patterns-of-distributed-systems/)
