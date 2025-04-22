@@ -1,6 +1,7 @@
 import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
+import Hero from '@/components/Hero' // Import the new Hero component
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
@@ -65,43 +66,8 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
-      {/* Modernized Hero Section */}
-      <section
-        className="relative flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-12 md:py-20"
-        aria-label="Hero"
-      >
-        <div className="flex-1 flex flex-col items-start">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4 animate-fadein">
-            Hi, I'm{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 hover:from-pink-500 hover:to-purple-500 focus:outline-none">
-              Jeevan
-            </span>
-          </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            Software Developer
-          </h2>
-          <p className="mb-8 text-lg text-gray-600 dark:text-gray-400 max-w-xl">
-            {siteMetadata.description}
-          </p>
-          <Link
-            href="/about"
-            className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 hover:from-pink-600 hover:to-purple-500 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400"
-            aria-label="Learn more about Jeevan"
-          >
-            Learn more about me
-          </Link>
-        </div>
-        <div className="flex-1 flex justify-center md:justify-end mb-8 md:mb-0">
-          <NextImage
-            src="/static/images/jeevan.jpg"
-            alt="Jeevan Wijerathna"
-            width={220}
-            height={220}
-            className="rounded-full shadow-xl border-4 border-white dark:border-gray-800 transition-transform duration-300 hover:scale-105"
-            priority
-          />
-        </div>
-      </section>
+      {/* Use the Hero component */}
+      <Hero />
 
       {/* Work Experience Timeline */}
       <section className="w-full max-w-3xl mx-auto mb-12" aria-label="Work Experience Timeline">
