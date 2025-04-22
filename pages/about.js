@@ -1,5 +1,6 @@
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getFileBySlug } from '@/lib/mdx'
+import Image from 'next/image'
 
 const DEFAULT_LAYOUT = 'AuthorLayout'
 
@@ -17,25 +18,21 @@ export default function About({ authorDetails }) {
     { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: '🔗' },
     // Add more as needed
   ]
-  const skills = frontMatter.skills || [
-    'JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 'Python'
-  ]
-  const techStack = frontMatter.techStack || [
-    'VSCode', 'Git', 'Docker', 'AWS'
-  ]
+  const skills = frontMatter.skills || ['TypeScript', 'React', 'Node.js', 'Next.js', 'Python']
+  const techStack = frontMatter.techStack || ['VSCode', 'Git', 'Docker', 'AWS']
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       {/* Hero Section */}
       <div className="flex flex-col items-center text-center mb-10">
-        <img
+        <Image
           src={frontMatter.avatar || '/static/images/avatar.png'}
           alt={frontMatter.name || 'Avatar'}
           className="w-32 h-32 rounded-full mb-4 border-4 border-primary-500 shadow-lg"
+          width={128}
+          height={128}
         />
-        <h1 className="text-3xl font-bold mb-2">
-          {frontMatter.name || 'Your Name'}
-        </h1>
+        <h1 className="text-3xl font-bold mb-2">{frontMatter.name || 'Your Name'}</h1>
         <p className="text-lg text-primary-600 font-medium mb-2">
           {frontMatter.title || 'Software Engineer'}
         </p>
@@ -46,16 +43,11 @@ export default function About({ authorDetails }) {
         {/* Contact Info */}
         <div className="mt-4 flex flex-col items-center gap-1">
           {frontMatter.email && (
-            <a
-              href={`mailto:${frontMatter.email}`}
-              className="text-primary-500 hover:underline"
-            >
+            <a href={`mailto:${frontMatter.email}`} className="text-primary-500 hover:underline">
               {frontMatter.email}
             </a>
           )}
-          {frontMatter.location && (
-            <span className="text-gray-500">{frontMatter.location}</span>
-          )}
+          {frontMatter.location && <span className="text-gray-500">{frontMatter.location}</span>}
         </div>
         {/* Social Links */}
         <div className="flex gap-4 mt-4">

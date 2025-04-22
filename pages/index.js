@@ -104,10 +104,7 @@ export default function Home({ posts }) {
       </section>
 
       {/* Work Experience Timeline */}
-      <section
-        className="w-full max-w-3xl mx-auto mb-12"
-        aria-label="Work Experience Timeline"
-      >
+      <section className="w-full max-w-3xl mx-auto mb-12" aria-label="Work Experience Timeline">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-900 dark:text-white">
           Work Experience
         </h2>
@@ -122,11 +119,13 @@ export default function Home({ posts }) {
                 onClick={() => handleToggle(idx)}
               >
                 <div className="flex-1">
-                  <span className="block text-lg font-semibold text-gray-900 dark:text-white">
+                  <span className="text-base font-semibold text-gray-900 dark:text-white">
                     {job.title ? `${job.title} at ` : ''}
                     <span className="text-purple-600 dark:text-purple-400">{job.company}</span>
                   </span>
-                  <span className="block text-sm text-gray-500 dark:text-gray-400">{job.period}</span>
+                  <span className="block text-sm text-gray-500 dark:text-gray-400">
+                    {job.period}
+                  </span>
                 </div>
                 <span className="ml-2 text-purple-500 dark:text-purple-300">
                   {expanded === idx ? '▲' : '▼'}
@@ -162,7 +161,9 @@ export default function Home({ posts }) {
                     {job.title ? `${job.title} at ` : ''}
                     <span className="text-purple-600 dark:text-purple-400">{job.company}</span>
                   </span>
-                  <span className="block text-sm text-gray-500 dark:text-gray-400">{job.period}</span>
+                  <span className="block text-sm text-gray-500 dark:text-gray-400">
+                    {job.period}
+                  </span>
                 </span>
                 <span className="ml-2 text-purple-500 dark:text-purple-300">
                   {expanded === idx ? '▲' : '▼'}
