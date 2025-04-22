@@ -78,7 +78,7 @@ var app = builder.Build();
 
 ## Consuming Options
 
-### IOptions<T>
+### IOptions&lt;T&gt;
 
 Inject `IOptions<EmailSettings>` for **singleton** consumption:
 
@@ -97,9 +97,9 @@ public class EmailService
 - `IOptions<T>.Value` is evaluated once when accessed.  
 - Suitable for transient or scoped services that don't need live reloads.
 
-### IOptionsSnapshot<T>
+### IOptionsSnapshot&lt;T&gt;
 
-Use `IOptionsSnapshot<T>` in **scoped** services (e.g., per‑request in ASP.NET Core):
+Use `IOptionsSnapshot<EmailSettings>` in **scoped** services (e.g., per‑request in ASP.NET Core):
 
 ```csharp
 public class ScopedEmailService
@@ -116,7 +116,7 @@ public class ScopedEmailService
 - Options are computed once per scope and cached.  
 - Supports reloading when configuration sources change (e.g., updated JSON file) between scopes.
 
-### IOptionsMonitor<T>
+### IOptionsMonitor&lt;T&gt;
 
 For **singleton** services that need to react to changes at runtime:
 
@@ -241,9 +241,9 @@ builder.Services
 
 This approach decouples validation logic from the options class itself.
 
-## Post‑Configuration and Advanced Scenarios
+## Post-Configuration and Advanced Scenarios
 
-- **Post‑Configure**  
+- **Post-Configure**  
   Override or augment bound values after all `Configure` calls:
 
   ```csharp
@@ -270,9 +270,10 @@ This approach decouples validation logic from the options class itself.
       });
   ```
 
-## Sample End‑to‑End Example
+## Sample End-to-End Example
 
 1. **appsettings.json**  
+
    ```json
    {
      "EmailSettings": {
