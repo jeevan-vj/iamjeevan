@@ -29,7 +29,16 @@ We'll create a startup script that:
 
 ### Step 1: Create a Startup Script
 
-Create a file named `startup.sh` with the following content:
+There are several ways to create and upload the startup script to your Azure App Service:
+
+#### Option 1: Using the Kudu Console (Azure App Service Advanced Tools)
+
+1. Navigate to your Azure App Service in the Azure Portal
+2. Go to **Development Tools** > **Advanced Tools** > **Go**
+3. In the Kudu console, click on **Debug console** > **SSH**
+4. Navigate to the `/home` directory
+5. Click on the **+** button > **New File** and name it `startup.sh`
+6. Copy and paste the following script:
 
 ```bash
 #!/bin/bash
@@ -64,6 +73,43 @@ echo "[$(date)] Starting Tomcat..."
 exec catalina.sh run
 ```
 
+7. Save the file
+8. In the SSH console, run:
+   ```bash
+   chmod +x /home/startup.sh
+   ```
+
+#### Option 2: Using FTP/FTPS
+
+1. Set up FTP/FTPS credentials in your App Service (under **Deployment Center** > **FTPS credentials**)
+2. Create the script locally on your computer
+3. Upload the file to the `/home` directory using your preferred FTP client (like FileZilla)
+4. Connect to the Kudu SSH console as described above and run:
+   ```bash
+   chmod +x /home/startup.sh
+   ```
+
+#### Option 3: Using Azure CLI
+
+1. Create the script locally on your computer (e.g., `startup.sh`)
+2. Use Azure CLI to upload it:
+   ```bash
+   # Login to Azure
+   az login
+
+   # Set your subscription (if you have multiple)
+   az account set --subscription <your-subscription-id>
+
+   # Upload the file to the App Service
+   az webapp deploy --resource-group <your-resource-group> --name <your-app-name> --src-path startup.sh --target-path /home/startup.sh
+
+   # Connect to the App Service using SSH
+   az webapp ssh --resource-group <your-resource-group> --name <your-app-name>
+   
+   # Inside the SSH session, make the script executable
+   chmod +x /home/startup.sh
+   ```
+
 This script performs the following operations:
 - Creates a backup of the original configuration file
 - Uses `sed` to replace the default value with our new value
@@ -77,7 +123,7 @@ This script performs the following operations:
 3. In the **Startup Command** field, enter: `/home/startup.sh`
 4. Click **Save**
 
-![Azure App Service Configuration](https://example.com/images/azure-config.png)
+
 
 ## Verification and Testing
 
