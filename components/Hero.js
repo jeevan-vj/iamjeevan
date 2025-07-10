@@ -1,13 +1,40 @@
 import Link from '@/components/Link'
 import NextImage from 'next/image'
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 export default function Hero() {
+  const [displayText, setDisplayText] = useState('')
+  const fullText = 'Software Engineer'
+  
+  useEffect(() => {
+    let index = 0
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setDisplayText(fullText.slice(0, index))
+        index++
+      } else {
+        clearInterval(timer)
+      }
+    }, 100)
+    
+    return () => clearInterval(timer)
+  }, [])
+
   return (
-    <section
+    <motion.section
       className="relative flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-12 md:py-20"
       aria-label="Hero"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="flex-1 flex flex-col items-start">
+      <motion.div 
+        className="flex-1 flex flex-col items-start"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         <p className="text-lg mb-2">
           Hello  <span role="img" aria-label="Waving hand">👋</span>
         </p>
@@ -17,25 +44,49 @@ export default function Hero() {
             Jeevan
           </span>{' '}
           <span className="block">Wijerathna</span>
-          <span className="block text-3xl sm:text-4xl md:text-5xl mt-2">Software Engineer</span>
+          <span className="block text-3xl sm:text-4xl md:text-5xl mt-2">
+            {displayText}
+            <motion.span
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 1, repeat: Infinity }}
+              className="inline-block w-1 h-8 ml-1 bg-indigo-600"
+            />
+          </span>
         </h1>
         <p className="mb-8 text-lg text-gray-600 dark:text-gray-400 max-w-xl">
           Transforming complex problems into elegant digital solutions. With a passion for clean 
           code and innovative technologies, I bridge the gap between ideas and implementation to
           build software that makes a difference.
         </p>
-        <Link
-          href="https://www.linkedin.com/in/jeevan-wijerathna/"
-          className="inline-block px-6 py-3 rounded-lg bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-          aria-label="Connect on LinkedIn"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          Let's Connect
-        </Link>
-      </div>
-      <div className="flex-1 relative flex justify-center md:justify-end mb-8 md:mb-0">
-        <div className="relative">
+          <Link
+            href="https://www.linkedin.com/in/jeevan-wijerathna/"
+            className="inline-block px-6 py-3 rounded-lg bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            aria-label="Connect on LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Let's Connect
+          </Link>
+        </motion.div>
+      </motion.div>
+      <motion.div 
+        className="flex-1 relative flex justify-center md:justify-end mb-8 md:mb-0"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <motion.div 
+          className="relative"
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           {/* Gradient Background Effect */}
           <div className="absolute -inset-4 md:-inset-8 bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-500 rounded-full blur-xl opacity-70 -z-20 animate-pulse"></div>
           {/* White Hexagon Shape */}
@@ -74,8 +125,8 @@ export default function Hero() {
               />
             </svg>
           </div>
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   )
 }
