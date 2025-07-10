@@ -1,11 +1,22 @@
 import Link from '@/components/Link'
 import NextImage from 'next/image'
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('')
   const fullText = 'Software Engineer'
+  const heroRef = useRef(null)
+  
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  })
+  
+  const gradientY = useTransform(scrollYProgress, [0, 1], [0, -50])
+  const hexagonY = useTransform(scrollYProgress, [0, 1], [0, -30])
+  const quoteY = useTransform(scrollYProgress, [0, 1], [0, 20])
   
   useEffect(() => {
     let index = 0
@@ -23,6 +34,7 @@ export default function Hero() {
 
   return (
     <motion.section
+      ref={heroRef}
       className="relative flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-12 md:py-20"
       aria-label="Hero"
       initial={{ opacity: 0, y: 30 }}
@@ -88,15 +100,19 @@ export default function Hero() {
           transition={{ type: "spring", stiffness: 300 }}
         >
           {/* Gradient Background Effect */}
-          <div className="absolute -inset-4 md:-inset-8 bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-500 rounded-full blur-xl opacity-70 -z-20 animate-pulse"></div>
+          <motion.div 
+            className="absolute -inset-4 md:-inset-8 bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-500 rounded-full blur-xl opacity-70 -z-20 animate-pulse"
+            style={{ y: gradientY }}
+          ></motion.div>
           {/* White Hexagon Shape */}
-          <div 
+          <motion.div 
             className="absolute -inset-2 bg-white dark:bg-gray-800 -z-10"
             style={{
               clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
               transform: 'scale(1.1)',
+              y: hexagonY
             }}
-          ></div>
+          ></motion.div>
           {/* Main Image */}
           <NextImage
             src="/static/images/jeevan.jpg"
@@ -106,9 +122,12 @@ export default function Hero() {
             className="rounded-xl shadow-xl z-10"
             priority
           />
-          <div className="absolute bottom-0 right-0 bg-black/80 p-4 rounded-lg max-w-xs text-white text-sm italic">
+          <motion.div 
+            className="absolute bottom-0 right-0 bg-black/80 p-4 rounded-lg max-w-xs text-white text-sm italic"
+            style={{ y: quoteY }}
+          >
             "Code is poetry written for both humans and machines to understand."
-          </div>
+          </motion.div>
           <div className="absolute -right-8 -bottom-8 w-16 h-16 rounded-full border-2 border-purple-500 flex items-center justify-center bg-gray-900 text-purple-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
