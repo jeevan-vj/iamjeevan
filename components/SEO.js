@@ -20,11 +20,6 @@ export const PageSeo = ({ title, description }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${siteMetadata.siteUrl}${siteMetadata.socialBanner}`} />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5489372004076046"
-        crossOrigin="anonymous"
-      ></script>
     </Head>
   )
 }
