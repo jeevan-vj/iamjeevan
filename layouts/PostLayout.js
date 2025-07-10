@@ -6,6 +6,12 @@ import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
+import dynamic from 'next/dynamic'
+
+const TableOfContents = dynamic(() => import('@/components/TableOfContents'), {
+  ssr: false,
+  loading: () => null
+})
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -25,7 +31,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         authorDetails={authorDetails}
         {...frontMatter}
       />
-      <article>
+      <TableOfContents content={children} />
+      <article className="lg:ml-72">
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
