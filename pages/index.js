@@ -7,6 +7,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import NextImage from 'next/image'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const MAX_DISPLAY = 5
 
@@ -17,6 +18,30 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  }
+
   // Work experience data
   const workHistory = [
     {
@@ -70,14 +95,28 @@ export default function Home({ posts }) {
       <Hero />
 
       {/* Work Experience Timeline */}
-      <section className="w-full max-w-3xl mx-auto mb-12" aria-label="Work Experience Timeline">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+      <motion.section 
+        className="w-full max-w-3xl mx-auto mb-12" 
+        aria-label="Work Experience Timeline"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <motion.h2 
+          className="text-2xl sm:text-3xl font-bold mb-8 text-gray-900 dark:text-white"
+          variants={itemVariants}
+        >
           Work Experience
-        </h2>
+        </motion.h2>
         {/* Desktop timeline */}
-        <ol className="relative border-l border-gray-300 dark:border-gray-700 ml-4 md:ml-8 hidden md:block">
+        <motion.ol className="relative border-l border-gray-300 dark:border-gray-700 ml-4 md:ml-8 hidden md:block">
           {workHistory.map((job, idx) => (
-            <li key={job.company} className="mb-10 ml-4">
+            <motion.li 
+              key={job.company} 
+              className="mb-10 ml-4"
+              variants={itemVariants}
+            >
               <div className="absolute w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full -left-1.5 border-2 border-white dark:border-gray-900"></div>
               <button
                 className="w-full text-left bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 md:p-6 flex flex-col md:flex-row md:items-center gap-2 md:gap-6 transition hover:shadow-lg focus:outline-none"
@@ -107,15 +146,16 @@ export default function Home({ posts }) {
                   {job.description}
                 </div>
               </div>
-            </li>
+            </motion.li>
           ))}
-        </ol>
+        </motion.ol>
         {/* Mobile optimized: cards without timeline line */}
-        <div className="md:hidden flex flex-col gap-4 mt-4">
+        <motion.div className="md:hidden flex flex-col gap-4 mt-4">
           {workHistory.map((job, idx) => (
-            <div
+            <motion.div
               key={job.company + '-mobile'}
               className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col"
+              variants={itemVariants}
             >
               <button
                 className="flex justify-between items-center w-full text-left focus:outline-none"
@@ -145,26 +185,47 @@ export default function Home({ posts }) {
                   {job.description}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <div className="">
-        <div className="pt-6 pb-5 space-y-2 md:space-y-5">
-          <h1 className="text-sm text-pink-500 dark:font-black ">RECENTLY PUBLISHED</h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+      <motion.div 
+        className=""
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <motion.div 
+          className="pt-6 pb-5 space-y-2 md:space-y-5"
+          variants={itemVariants}
+        >
+          <motion.h1 
+            className="text-sm text-pink-500 dark:font-black"
+            variants={itemVariants}
+          >
+            RECENTLY PUBLISHED
+          </motion.h1>
+          <motion.p 
+            className="text-lg leading-7 text-gray-500 dark:text-gray-400"
+            variants={itemVariants}
+          >
             {siteMetadata.description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+        {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
           {
             !posts.length && 'No posts found.'
           }
           const { slug, date, title, summary, tags } = frontMatter
           return (
-            <div key={slug} className="transform transition mb-10">
+            <motion.div 
+              key={slug} 
+              className="transform transition mb-10"
+              variants={itemVariants}
+            >
               <div id="body" className="flex flex-col">
                 <Link id="name" className="mb-2 hover:text-purple-500 " href={`/blog/${slug}`}>
                   <h3 className="text-xl font-semibold dark:font-black font-gray-1000">{title}</h3>
@@ -187,12 +248,18 @@ export default function Home({ posts }) {
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )
         })}
-      </div>
+      </motion.div>
       {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base font-medium leading-6">
+        <motion.div 
+          className="flex justify-end text-base font-medium leading-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <Link
             href="/blog"
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -200,7 +267,7 @@ export default function Home({ posts }) {
           >
             All Posts &rarr;
           </Link>
-        </div>
+        </motion.div>
       )}
     </>
   )
