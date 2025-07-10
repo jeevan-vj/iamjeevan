@@ -5,7 +5,6 @@ const TableOfContents = ({ content, className = '' }) => {
   const [headings, setHeadings] = useState([])
   const [activeId, setActiveId] = useState('')
   const [isOpen, setIsOpen] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
   const [isClient, setIsClient] = useState(false)
   const tocRef = useRef(null)
 
@@ -80,23 +79,6 @@ const TableOfContents = ({ content, className = '' }) => {
 
     return () => observer.disconnect()
   }, [headings])
-
-  // Scroll progress tracking
-  useEffect(() => {
-    if (!isClient) return
-
-    const updateScrollProgress = () => {
-      const scrollTop = window.scrollY
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-      setScrollProgress(Math.min(100, Math.max(0, progress)))
-    }
-
-    window.addEventListener('scroll', updateScrollProgress)
-    updateScrollProgress() // Initial calculation
-
-    return () => window.removeEventListener('scroll', updateScrollProgress)
-  }, [isClient])
 
   // Smooth scroll to heading
   const scrollToHeading = (id) => {
@@ -295,21 +277,6 @@ const TableOfContents = ({ content, className = '' }) => {
               </motion.button>
             ))}
           </nav>
-          
-          {/* Scroll Progress Indicator */}
-          <motion.div 
-            className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700"
-            variants={itemVariants}
-          >
-            <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">Reading Progress</div>
-            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-              <motion.div 
-                className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full"
-                style={{ width: `${scrollProgress}%` }}
-                transition={{ duration: 0.2 }}
-              />
-            </div>
-          </motion.div>
         </div>
       </motion.aside>
     </>

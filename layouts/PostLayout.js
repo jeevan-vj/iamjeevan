@@ -13,6 +13,11 @@ const TableOfContents = dynamic(() => import('@/components/TableOfContents'), {
   loading: () => null
 })
 
+const ReadingProgress = dynamic(() => import('@/components/ReadingProgress'), {
+  ssr: false,
+  loading: () => null
+})
+
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
@@ -31,6 +36,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         authorDetails={authorDetails}
         {...frontMatter}
       />
+      <ReadingProgress />
       <TableOfContents content={children} />
       <article className="lg:ml-72">
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
