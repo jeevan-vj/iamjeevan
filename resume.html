@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevan Wijerathna - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #ffffff;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .contact-info a {
+            color: #374151;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #111827;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #111827;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        .experience-item {
+            margin-bottom: 32px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: #111827;
+        }
+
+        .job-dates {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .company {
+            font-size: 14px;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+
+        .job-description ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-description li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 16px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .job-description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #9ca3af;
+        }
+
+        .projects {
+            margin-top: 16px;
+        }
+
+        .projects-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .project-item {
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 2px solid #e5e7eb;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+
+        .project-name {
+            font-weight: 500;
+            font-size: 14px;
+            color: #111827;
+        }
+
+        .project-duration {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .project-description {
+            font-size: 13px;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .tech-tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .project-achievements ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .project-achievements li {
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 12px;
+            font-size: 13px;
+            color: #374151;
+        }
+
+        .project-achievements li:before {
+            content: "‣";
+            position: absolute;
+            left: 0;
+            color: #9ca3af;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .education-details h3 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111827;
+            margin-bottom: 2px;
+        }
+
+        .education-details p {
+            font-size: 13px;
+            color: #374151;
+        }
+
+        .education-year {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-category h3 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .skill-category p {
+            font-size: 13px;
+            color: #374151;
+            line-height: 1.5;
+        }
+
+        .certifications-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .certification-tag {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            color: #374151;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .additional-info h3 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .personal-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .personal-project {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            background: #fafafa;
+        }
+
+        .personal-project h4 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .personal-project .url {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .personal-project p {
+            font-size: 13px;
+            color: #374151;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .personal-project .tech-stack {
+            margin-bottom: 0;
+        }
+
+        @media print {
+            body {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            .container {
+                max-width: none;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header .subtitle {
+                font-size: 14px;
+            }
+
+            .section {
+                margin-bottom: 24px;
+                break-inside: avoid;
+            }
+
+            .experience-item {
+                margin-bottom: 20px;
+                break-inside: avoid;
+            }
+
+            .project-item {
+                break-inside: avoid;
+            }
+
+            .personal-projects {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .personal-project {
+                break-inside: avoid;
+                padding: 12px;
+            }
+
+            @page {
+                margin: 0.5in;
+                size: A4;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px;
+            }
+
+            .experience-header,
+            .project-header,
+            .education-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .job-dates,
+            .project-duration,
+            .education-year {
+                margin-top: 2px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .personal-projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Jeevan Wijerathna</h1>
+            <p class="subtitle">AWS, Azure, and Sitecore Certified Developer with over 10 years of experience in software development. Skilled in .NET technologies, cloud-native architectures, and backend development. Passionate about delivering scalable, maintainable solutions while adhering to best practices like Domain-Driven Design, Clean Code, and Test-Driven Development.</p>
+            <div class="contact-info">
+                <span>Jeevan90wijerathna@gmail.com</span>
+                <span>+64 22 67 33 146</span>
+                <a href="https://iamjeevan.com">iamjeevan.com</a>
+                <span>Auckland, New Zealand</span>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="job-title">Technical Lead</h3>
+                    <span class="job-dates">2023 - Present</span>
+                </div>
+                <p class="company">Datacom, New Zealand</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Designed and reviewed new features with architects and team members for critical business applications</li>
+                        <li>Implemented scalable backend solutions using .NET, C#, and Azure technologies</li>
+                        <li>Enhanced application performance and optimized Azure costs by identifying and addressing bottlenecks</li>
+                        <li>Led backlog grooming, prioritization, and technical discussions with business users to deliver robust solutions</li>
+                        <li>Modernized legacy applications by transitioning to cloud-native, decoupled architectures</li>
+                    </ul>
+                </div>
+                
+                <div class="projects">
+                    <h4 class="projects-title">Key Projects</h4>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h5 class="project-name">Fonterra Inventory Management System</h5>
+                            <span class="project-duration">Ongoing</span>
+                        </div>
+                        <p class="project-description">Trace It is an inventory management system for Fonterra, New Zealand's largest dairy company.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Oracle Apex</span>
+                            <span class="tech-tag">PL/SQL</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Implemented a new feature to track samples inventory</li>
+                                <li>Introduced software engineering best practices to avoid/minimize deployment/development risks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h5 class="project-name">PGDB Application Portal</h5>
+                            <span class="project-duration">Ongoing</span>
+                        </div>
+                        <p class="project-description">Developed a portal for managing licenses and certifications for NZ practitioners.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">.NET</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">WEB-API</span>
+                            <span class="tech-tag">Identity Server</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Azure</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Implemented proactive application monitoring to ensure business continuity</li>
+                                <li>Delivered scalable architectural solutions for critical business functions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h5 class="project-name">Southern Cross Applications</h5>
+                            <span class="project-duration">Ongoing</span>
+                        </div>
+                        <p class="project-description">Supported and modernized various business-critical applications.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">.NET</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">WEB-API</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Azure</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Sitecore</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Ensured business continuity by resolving P1/P2 issues promptly</li>
+                                <li>Migrated legacy applications to microservices architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="job-title">Senior Software Engineer</h3>
+                    <span class="job-dates">2020 - 2022</span>
+                </div>
+                <p class="company">Kinesso, Malaysia</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Designed and implemented modernized legacy applications using microservices architecture</li>
+                        <li>Developed GRPC services for inter-process communication and optimized database performance</li>
+                        <li>Automated deployments using Jenkins and introduced DevOps practices for database development</li>
+                        <li>Integrated various data sources like Snowflake, Redshift, and Athena for analytics tools</li>
+                        <li>Monitored application performance using DataDog and implemented CI/CD pipelines</li>
+                    </ul>
+                </div>
+                
+                <div class="projects">
+                    <h4 class="projects-title">Key Projects</h4>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h5 class="project-name">Magnifiq</h5>
+                            <span class="project-duration">2 years</span>
+                        </div>
+                        <p class="project-description">Developed a business intelligence analytics tool with custom ETL and reporting capabilities.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">.NET</span>
+                            <span class="tech-tag">GRPC</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Jenkins</span>
+                            <span class="tech-tag">Snowflake</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Streamlined database development with Flyway for version control</li>
+                                <li>Reduced manual deployment efforts by automating processes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h5 class="project-name">Apollo ETL Platform</h5>
+                            <span class="project-duration">1 year</span>
+                        </div>
+                        <p class="project-description">Built an ETL orchestration platform using Dagster and developed a dashboard UI.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">.NET</span>
+                            <span class="tech-tag">Web-API</span>
+                            <span class="tech-tag">Dagster</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Angular</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Migrated legacy ETL processes to a modern platform</li>
+                                <li>Improved ETL performance and scalability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="job-title">Software Engineer</h3>
+                    <span class="job-dates">2017 - 2022</span>
+                </div>
+                <p class="company">Sitecore, Malaysia</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Developed Sitecore platform modules to enhance CMS functionality with Azure Storage and CDN support</li>
+                        <li>Implemented backend services using WEB-API and C#, and developed front-end applications using Angular</li>
+                        <li>Set up CI pipelines and automated deployments using PowerShell and TeamCity</li>
+                        <li>Participated in R&D, sprint planning, and cross-functional team collaboration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="job-title">Software Engineer</h3>
+                    <span class="job-dates">2015 - 2017</span>
+                </div>
+                <p class="company">CMS Pvt Ltd, Colombo, Sri Lanka</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Developed and maintained scalable e-commerce solutions for European markets</li>
+                        <li>Modernized legacy systems and implemented responsive front-end designs</li>
+                        <li>Optimized database performance and implemented caching mechanisms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="job-title">Software Engineer</h3>
+                    <span class="job-dates">February 2013 - December 2014</span>
+                </div>
+                <p class="company">Bileeta Pvt Ltd, Sri Lanka</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Contributed to the development of an award-winning cloud ERP solution</li>
+                        <li>Designed and implemented backend services and real-time features</li>
+                        <li>Optimized database performance and implemented stored procedures</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>National School of Business Management, Sri Lanka</h3>
+                    <p>Bachelor of Science in Management Information Systems</p>
+                </div>
+                <span class="education-year">2014</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Frameworks</h3>
+                    <p>C#, .NET Core, ASP.NET, React, Angular, JavaScript, TypeScript</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <p>Azure, AWS, Docker, Kubernetes, Microservices</p>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & CI/CD</h3>
+                    <p>Azure DevOps, GitHub Actions, Jenkins, TeamCity</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases & Storage</h3>
+                    <p>SQL Server, PostgreSQL, Oracle, Azure Storage</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Testing & Quality</h3>
+                    <p>XUnit, SpecFlow, Pester, TDD, Clean Code</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Architecture & Design</h3>
+                    <p>Domain-Driven Design, Clean Architecture, SOLID Principles</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-list">
+                <span class="certification-tag">AWS Certified Solution Architect Associate</span>
+                <span class="certification-tag">AWS Certified Developer</span>
+                <span class="certification-tag">Azure Certified Developer</span>
+                <span class="certification-tag">Sitecore 9 Certified Developer</span>
+                <span class="certification-tag">SAFe 4.0 Practitioner</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Personal Projects</h2>
+            <div class="personal-projects">
+                <div class="personal-project">
+                    <h4>Resume Pro</h4>
+                    <p class="url">resumepro.iamjeevan.com</p>
+                    <p>Built an ATS-friendly resume generator using Next.js, React, and Tailwind CSS. Implemented modern UI with real-time preview and multiple templates.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="personal-project">
+                    <h4>Vanish Notes</h4>
+                    <p class="url">vanishnotes.iamjeevan.com</p>
+                    <p>Developed a self-destructive note sharing application. Implemented end-to-end encryption and auto-deletion features.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Crypto.js</span>
+                    </div>
+                </div>
+
+                <div class="personal-project">
+                    <h4>NZ Salary Calculator</h4>
+                    <p class="url">nzsalarycalculator.iamjeevan.com</p>
+                    <p>Created a comprehensive salary calculator for New Zealand employees. Includes tax calculations, KiwiSaver, and other deductions.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="personal-project">
+                    <h4>Flash Card Fest</h4>
+                    <p class="url">flash-card-fest.netlify.app</p>
+                    <p>Designed an AI-powered study flash card generator. Integrated with OpenAI API for automated content generation.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="no-print" style="text-align: center; margin-top: 40px; padding: 20px; background: #f9fafb; border-top: 1px solid #e5e7eb;">
+        <p style="color: #6b7280; font-size: 14px; margin-bottom: 16px;">Modern Resume Template inspired by cv.jarocki.me</p>
+        <button onclick="window.print()" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 14px;">
+            Print Resume
+        </button>
+    </div>
+</body>
+</html>

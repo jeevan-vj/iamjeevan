@@ -51,6 +51,11 @@ const MobileNav = () => {
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
       </svg>
+    ),
+    'Resume': (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
     )
   }
 
@@ -58,7 +63,8 @@ const MobileNav = () => {
     'Home': 'from-blue-500 to-cyan-400',
     'Blog': 'from-purple-500 to-pink-400', 
     'Tags': 'from-green-500 to-teal-400',
-    'About': 'from-orange-500 to-red-400'
+    'About': 'from-orange-500 to-red-400',
+    'Resume': 'from-indigo-500 to-purple-400'
   }
 
   return (
@@ -182,7 +188,11 @@ const MobileNav = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 * (index + 1), duration: 0.4 }}
                       >
-                        <Link href={link.href} onClick={onToggleNav}>
+                        <Link 
+                          href={link.href} 
+                          onClick={onToggleNav}
+                          {...(link.target && { target: link.target, rel: 'noopener noreferrer' })}
+                        >
                           <motion.div
                             className="group relative p-4 rounded-2xl border border-gray-200/30 dark:border-gray-700/30 hover:border-gray-300/50 dark:hover:border-gray-600/50 transition-all duration-300 cursor-pointer overflow-hidden"
                             whileHover={{ 
