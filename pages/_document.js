@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import Script from 'next/script'
+import adConfig from '@/data/adConfig'
+
 class MyDocument extends Document {
   render() {
     return (
@@ -39,10 +41,19 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <Script
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5489372004076046"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adConfig.clientId}`}
             strategy="afterInteractive"
             crossOrigin="anonymous"
           />
+          <Script id="disable-auto-ads" strategy="afterInteractive">
+            {`
+              window.adsbygoogle = window.adsbygoogle || [];
+              window.adsbygoogle.push({
+                google_ad_client: "${adConfig.clientId}",
+                enable_page_level_ads: false
+              });
+            `}
+          </Script>
         </body>
       </Html>
     )

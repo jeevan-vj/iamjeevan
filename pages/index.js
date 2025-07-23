@@ -2,6 +2,7 @@ import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import Hero from '@/components/Hero' // Import the new Hero component
+import { BannerAd, InFeedAd, MobileAd } from '@/components/ads'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
@@ -190,6 +191,10 @@ export default function Home({ posts }) {
         </motion.div>
       </motion.section>
 
+      {/* Ad placement after work experience */}
+      <BannerAd />
+      <MobileAd />
+
       <motion.div 
         className=""
         initial="hidden"
@@ -215,40 +220,43 @@ export default function Home({ posts }) {
           </motion.p>
         </motion.div>
 
-        {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
+{posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
           {
             !posts.length && 'No posts found.'
           }
           const { slug, date, title, summary, tags } = frontMatter
           return (
-            <motion.div 
-              key={slug} 
-              className="transform transition mb-10"
-              variants={itemVariants}
-            >
-              <div id="body" className="flex flex-col">
-                <Link id="name" className="mb-2 hover:text-purple-500 " href={`/blog/${slug}`}>
-                  <h3 className="text-xl font-semibold dark:font-black font-gray-1000">{title}</h3>
-                </Link>
-                <p id="job" className="text-gray-800 mt-2 dark:text-white">
-                  {summary}
-                </p>
-                <div className="flex flex-wrap mt-3">
-                  {tags.map((tag) => (
-                    <Tag key={tag} text={tag} />
-                  ))}
-                </div>
-                <div className="text-base font-medium leading-6 mt-5 duration-200 hover:translate-x-1 hover:text-purple-400">
-                  <Link
-                    href={`/blog/${slug}`}
-                    className="font-white font-semibold "
-                    aria-label={`Read "${title}"`}
-                  >
-                    Read more &rarr;
+            <div key={`post-${slug}`}>
+              <motion.div 
+                className="transform transition mb-10"
+                variants={itemVariants}
+              >
+                <div id="body" className="flex flex-col">
+                  <Link id="name" className="mb-2 hover:text-purple-500 " href={`/blog/${slug}`}>
+                    <h3 className="text-xl font-semibold dark:font-black font-gray-1000">{title}</h3>
                   </Link>
+                  <p id="job" className="text-gray-800 mt-2 dark:text-white">
+                    {summary}
+                  </p>
+                  <div className="flex flex-wrap mt-3">
+                    {tags.map((tag) => (
+                      <Tag key={tag} text={tag} />
+                    ))}
+                  </div>
+                  <div className="text-base font-medium leading-6 mt-5 duration-200 hover:translate-x-1 hover:text-purple-400">
+                    <Link
+                      href={`/blog/${slug}`}
+                      className="font-white font-semibold "
+                      aria-label={`Read "${title}"`}
+                    >
+                      Read more &rarr;
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+              {/* Add in-feed ad after 2nd post */}
+              {index === 1 && <InFeedAd />}
+            </div>
           )
         })}
       </motion.div>
