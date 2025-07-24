@@ -52,19 +52,15 @@ By the end of this guide, you'll have a complete system that can increase your p
 #### 1. **Context Variables**: Your Information Highway
 Context variables are the secret sauce that makes Copilot truly powerful. Instead of writing generic prompts, you can attach specific project context:
 
-```markdown
-# Basic prompt (limited effectiveness)
-"Create a function to validate user input"
+    # Basic prompt (limited effectiveness)
+    "Create a function to validate user input"
 
-# Context-enhanced prompt (highly effective)
-```markdown
-# Layer 2: Specific context
-"Focus on #file:services/UserService.js to understand our user management patterns"
+    # Context-enhanced prompt (highly effective)
+    # Layer 2: Specific context
+    "Focus on #file:services/UserService.js to understand our user management patterns"
 
-# Layer 3: Precise context
-"Using #selection, modify this function to handle the new validation requirements"
-```
-```
+    # Layer 3: Precise context
+    "Using #selection, modify this function to handle the new validation requirements"
 
 **Available Context Variables:**
 - `#codebase` - Entire project context
