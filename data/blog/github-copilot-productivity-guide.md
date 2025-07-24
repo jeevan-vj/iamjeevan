@@ -1,6 +1,6 @@
 ---
 title: 'The Complete Guide to GitHub Copilot Instructions and Prompt Files'
-date: '2024-07-21'
+date: '2025-07-25'
 tags: ['github-copilot', 'ai', 'productivity', 'prompt-engineering', 'dev-tools']
 draft: false
 summary: 'Master strategic prompt engineering and custom instructions to boost your development productivity by 10x with GitHub Copilot.'
