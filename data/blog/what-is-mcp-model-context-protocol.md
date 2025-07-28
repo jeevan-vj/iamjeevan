@@ -165,6 +165,9 @@ While MCP is exciting, it's still evolving:
 
 ---
 
+### Reference:
+[Youtube](https://youtu.be/7j_NE6Pjv-E?si=5VZ2MobskI3Ym1h7)
+
 ### 🧠 Key Takeaway
 
 MCP is more than just a technical protocol—it's the **HTTP of AI tools**. Just as HTTP standardized web communication and enabled the internet boom, MCP could standardize AI-tool communication and enable the next wave of AI innovation.
