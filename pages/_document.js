@@ -45,13 +45,9 @@ class MyDocument extends Document {
             strategy="afterInteractive"
             crossOrigin="anonymous"
           />
-          <Script id="disable-auto-ads" strategy="afterInteractive">
+          <Script id="init-adsense" strategy="afterInteractive">
             {`
               window.adsbygoogle = window.adsbygoogle || [];
-              window.adsbygoogle.push({
-                google_ad_client: "${adConfig.clientId}",
-                enable_page_level_ads: false
-              });
             `}
           </Script>
         </body>

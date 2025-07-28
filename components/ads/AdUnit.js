@@ -46,8 +46,12 @@ const AdUnit = ({
   useEffect(() => {
     if (isVisible && !isLoaded && window.adsbygoogle) {
       try {
-        window.adsbygoogle.push({})
-        setIsLoaded(true)
+        // Only push if the element hasn't been processed
+        const adElement = adRef.current?.querySelector('.adsbygoogle')
+        if (adElement && !adElement.dataset.adsbygoogleStatus) {
+          window.adsbygoogle.push({})
+          setIsLoaded(true)
+        }
       } catch (error) {
         console.warn('AdSense error:', error)
       }
