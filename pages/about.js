@@ -69,73 +69,71 @@ export default function About({ authorDetails }) {
     },
     { 
       name: 'Email', 
-      url: `mailto:${frontMatter.email || 'jeevan@yiamjeevan.com'}`, 
+      url: `mailto:${frontMatter.email || 'Jeevan90wijerathna@gmail.com'}`, 
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
       color: 'hover:text-red-500'
+    },
+    { 
+      name: 'Website', 
+      url: 'https://iamjeevan.com', 
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+      ),
+      color: 'hover:text-green-500'
     }
   ]
   
-  const skills = frontMatter.skills || ['TypeScript', 'React', 'Node.js', 'Next.js', 'Python', 'Azure', 'AWS', 'Docker', 'MongoDB', 'PostgreSQL']
-  const techStack = frontMatter.techStack || ['VSCode', 'Git', 'Docker', 'AWS', 'Azure', 'Figma', 'Postman', 'Notion']
-  const experiences = [
+  const skills = frontMatter.skills || ['C#', '.NET Core', 'ASP.NET', 'React', 'Angular', 'TypeScript', 'JavaScript', 'Flutter', 'Java', 'Azure', 'AWS', 'Docker', 'Kubernetes', 'Microservices', 'Terraform', 'Infrastructure as Code']
+  const techStack = frontMatter.techStack || ['Visual Studio', 'VSCode', 'Git', 'Docker', 'Kubernetes', 'Azure DevOps', 'GitHub Actions', 'Jenkins', 'TeamCity', 'Azure Pipelines', 'Terraform', 'Azure Portal']
+  const certifications = frontMatter.certifications || ['AWS Certified Solution Architect Associate', 'AWS Certified Developer', 'Azure Certified Developer', 'Sitecore 9 Certified Developer', 'SAFe 4.0 Practitioner']
+  const personalProjects = frontMatter.personalProjects || []
+  const experiences = frontMatter.experience || [
     {
       title: 'Technical Lead',
       company: 'Datacom',
-      period: 'Sep 2023 - Present',
+      period: '2023 - Present',
       location: 'Auckland, New Zealand',
       description: 'Leading technical initiatives and mentoring development teams in enterprise solutions'
     },
     {
-      title: 'Senior Software Developer',
-      company: 'Datacom',
-      period: 'Oct 2022 - Sep 2023',
-      location: 'Auckland, New Zealand',
-      description: 'Developing enterprise-grade applications and cloud solutions for major clients'
-    },
-    {
       title: 'Senior Software Engineer',
       company: 'Kinesso',
-      period: 'Feb 2020 - Oct 2022',
+      period: '2020 - 2022',
       location: 'Kuala Lumpur, Malaysia',
-      description: 'Built scalable digital advertising platforms and data-driven marketing solutions'
+      description: 'Designed and implemented modernized legacy applications using microservices architecture'
     },
     {
-      title: 'Developer',
+      title: 'Software Engineer',
       company: 'Sitecore',
-      period: 'Jun 2017 - Feb 2020',
+      period: '2017 - 2020',
       location: 'Malaysia',
       description: 'Worked on Sitecore Azure Marketplace, Azure Blob Storage provider, CDN module project, and various enterprise solutions'
     },
     {
       title: 'Software Engineer',
       company: 'CMS LK',
-      period: '2015 - May 2017',
-      location: 'Colombo 2',
+      period: '2015 - 2017',
+      location: 'Colombo, Sri Lanka',
       description: 'Developed Redcorp E-commerce web site using ASP.NET MVC5, SQL Server 2014, Dapper ORM, and other modern technologies'
     },
     {
       title: 'Software Engineer',
       company: 'Bileeta pvt ltd',
-      period: 'Nov 2014 - Dec 2014',
-      location: 'Colombo 03, Sri Lanka',
-      description: 'Contributed to enterprise software development projects'
-    },
-    {
-      title: 'Associate Software Engineer',
-      company: 'Bileeta pvt ltd',
-      period: 'Feb 2013 - Dec 2014',
-      location: 'Colombo 03, Sri Lanka',
+      period: '2013 - 2015',
+      location: 'Colombo, Sri Lanka',
       description: 'Worked on Enterprise Resource Planning (ERP) software development project as a backend developer using SQL Server and C# .NET'
     }
   ]
 
   return (
     <>
-      <PageSeo title={`About - ${frontMatter.name}`} description={`About ${frontMatter.name} - Software Engineer passionate about building exceptional digital experiences.`} />
+      <PageSeo title={`About - ${frontMatter.name}`} description={`About ${frontMatter.name} - Technical Lead and Principal Developer with 10+ years of experience in .NET, Azure cloud technologies, React frontend development, and mobile applications. Leading technical architecture at Datacom, Auckland.`} />
       
       {/* Animated background gradient */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -169,6 +167,7 @@ export default function About({ authorDetails }) {
                   className="relative mb-8"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-xl opacity-30 animate-pulse" />
+                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 rounded-full blur opacity-75 animate-pulse" />
                   <div className="relative bg-gradient-to-br from-blue-500 to-purple-600 p-1 rounded-full">
                     <Image
                       src={frontMatter.avatar || '/static/images/jeevan.jpg'}
@@ -184,6 +183,7 @@ export default function About({ authorDetails }) {
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     className="absolute -inset-4 border-2 border-dashed border-blue-400/30 rounded-full"
                   />
+                  <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-white dark:border-gray-900 animate-pulse" />
                 </motion.div>
                 
                 {/* Social Links */}
@@ -239,12 +239,16 @@ export default function About({ authorDetails }) {
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
                       <span className="text-lg font-medium text-gray-600 dark:text-gray-300">
-                        {frontMatter.occupation || 'Software Developer'}
+                        {frontMatter.occupation || 'Technical Lead | Principal Developer'}
                       </span>
                     </div>
                     <span className="text-gray-400">•</span>
                     <span className="text-lg text-blue-600 dark:text-blue-400 font-medium">
-                      {frontMatter.company || 'iamjeevan'}
+                      {frontMatter.company || 'Datacom'}
+                    </span>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-lg text-green-600 dark:text-green-400 font-medium">
+                      {frontMatter.location || 'Auckland, New Zealand'}
                     </span>
                   </motion.div>
                 </div>
@@ -256,7 +260,7 @@ export default function About({ authorDetails }) {
                   className="prose prose-lg dark:prose-dark max-w-none"
                 >
                   <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Passionate software developer specializing in Microsoft technologies, mobile development, and cutting-edge frontend frameworks. I love building exceptional digital experiences that make a difference.
+                    Principal Developer with 10+ years of experience leading technical architecture and cross-platform development. Expert in .NET, Azure cloud technologies, React frontend development, and mobile applications. Proven track record in modernizing legacy systems and delivering scalable solutions.
                   </p>
                 </motion.div>
 
@@ -267,7 +271,7 @@ export default function About({ authorDetails }) {
                   className="flex flex-wrap gap-4 pt-4"
                 >
                   <motion.a
-                    href={`mailto:${frontMatter.email || 'jeevan@yiamjeevan.com'}`}
+                    href={`mailto:${frontMatter.email || 'Jeevan90wijerathna@gmail.com'}`}
                     whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -282,8 +286,57 @@ export default function About({ authorDetails }) {
                   >
                     View My Blog
                   </motion.a>
+                  <motion.a
+                    href="https://iamjeevan.com/resume.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    View Resume
+                  </motion.a>
                 </motion.div>
               </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Statistics Section */}
+        <motion.section className="px-4 py-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950/30 dark:via-indigo-950/30 dark:to-purple-950/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl lg:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-400 bg-clip-text text-transparent"
+            >
+              By the Numbers
+            </motion.h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { number: '10+', label: 'Years of Experience', icon: '🚀' },
+                { number: '5+', label: 'Major Projects Led', icon: '🎯' },
+                { number: '20+', label: 'Technologies Mastered', icon: '⚡' },
+                { number: '100%', label: 'Client Satisfaction', icon: '⭐' }
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -10 }}
+                  className="text-center group"
+                >
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
+                    <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-gray-600 dark:text-gray-300 font-medium">{stat.label}</div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.section>
@@ -365,6 +418,98 @@ export default function About({ authorDetails }) {
           </div>
         </motion.section>
 
+        {/* Certifications Section */}
+        <motion.section className="px-4 py-16 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-gray-900 to-green-600 dark:from-white dark:to-green-400 bg-clip-text text-transparent"
+            >
+              Certifications
+            </motion.h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={cert}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                  <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-2xl px-6 py-4 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full flex-shrink-0" />
+                      <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{cert}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Personal Projects Section */}
+        <motion.section className="px-4 py-16">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-gray-900 to-indigo-600 dark:from-white dark:to-indigo-400 bg-clip-text text-transparent"
+            >
+              Personal Projects
+            </motion.h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {personalProjects.map((project, index) => (
+                <motion.div
+                  key={project.name}
+                  initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  whileHover={{ y: -10, boxShadow: "0 25px 50px rgba(0,0,0,0.15)" }}
+                  className="group relative p-8 bg-white dark:bg-gray-800 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                      <motion.a
+                        href={`https://${project.url}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-lg"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </motion.a>
+                    </div>
+                    <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-3">{project.url}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
         {/* Experience Timeline */}
         <motion.section className="px-4 py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-950">
           <div className="max-w-4xl mx-auto">
@@ -393,7 +538,8 @@ export default function About({ authorDetails }) {
                       className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
                     >
                       <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">{exp.title}</h3>
-                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{exp.company}</p>
+                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">{exp.company}</p>
+                      <p className="text-sm text-green-600 dark:text-green-400 font-medium mb-2">{exp.location}</p>
                       <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{exp.period}</p>
                       <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>
                     </motion.div>
