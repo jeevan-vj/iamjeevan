@@ -312,6 +312,12 @@
         }
 
         @media print {
+            @page {
+                margin: 0.3in;
+                size: A4;
+            }
+
+            /* ── Global resets ── */
             * {
                 box-sizing: border-box;
             }
@@ -324,20 +330,34 @@
                 padding: 0 !important;
                 width: 100% !important;
                 max-width: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                orphans: 3;
+                widows: 3;
             }
 
+            /* Prevent browsers from appending URLs after links */
+            a[href]::after {
+                content: none !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            /* ── Layout ── */
             .container {
                 max-width: none !important;
                 width: 100% !important;
                 padding: 8px 12px !important;
                 margin: 0 !important;
-                box-sizing: border-box !important;
                 display: block !important;
                 position: static !important;
             }
 
+            /* ── Header ── */
             .header {
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
 
             .header h1 {
@@ -347,29 +367,42 @@
 
             .header .subtitle {
                 font-size: 12px;
-                margin-bottom: 8px;
+                margin-bottom: 6px;
                 line-height: 1.4;
             }
 
             .contact-info {
                 font-size: 11px;
-                gap: 12px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+                justify-content: flex-start;
             }
 
+            /* ── Sections ── */
             .section {
                 margin-bottom: 16px;
-                break-inside: avoid;
             }
 
             .section-title {
                 font-size: 14px;
                 margin-bottom: 12px;
                 padding-bottom: 4px;
+                break-after: avoid;
             }
 
+            /* ── Experience ── */
             .experience-item {
                 margin-bottom: 14px;
-                break-inside: avoid;
+            }
+
+            .experience-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .experience-header {
+                margin-bottom: 2px;
+                break-after: avoid;
             }
 
             .job-title {
@@ -383,6 +416,7 @@
             .company {
                 font-size: 12px;
                 margin-bottom: 8px;
+                break-after: avoid;
             }
 
             .job-description li {
@@ -390,6 +424,7 @@
                 margin-bottom: 3px;
             }
 
+            /* ── Projects ── */
             .projects {
                 margin-top: 10px;
             }
@@ -397,11 +432,22 @@
             .projects-title {
                 font-size: 12px;
                 margin-bottom: 8px;
+                break-after: avoid;
             }
 
             .project-item {
                 margin-bottom: 10px;
                 padding-left: 8px;
+                border-left-color: #000;
+                break-inside: avoid;
+            }
+
+            .project-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .project-header {
+                margin-bottom: 2px;
             }
 
             .project-name {
@@ -412,16 +458,15 @@
                 font-size: 10px;
             }
 
+            .project-link {
+                font-size: 10px;
+                color: #374151;
+                text-decoration: none;
+            }
+
             .project-description {
                 font-size: 11px;
                 margin-bottom: 4px;
-            }
-
-            .tech-tag {
-                font-size: 9px;
-                padding: 1px 6px;
-                margin-right: 4px;
-                margin-bottom: 2px;
             }
 
             .project-achievements li {
@@ -429,8 +474,27 @@
                 margin-bottom: 2px;
             }
 
+            /* ── Tech tags & badges ── */
+            .tech-stack {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+
+            .tech-tag {
+                font-size: 9px;
+                padding: 1px 6px;
+                margin-right: 4px;
+                margin-bottom: 2px;
+                background: #f3f4f6 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* ── Education ── */
             .education-item {
                 margin-bottom: 8px;
+                break-inside: avoid;
             }
 
             .education-details h3 {
@@ -445,6 +509,17 @@
                 font-size: 11px;
             }
 
+            /* ── Skills ── */
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .skill-category {
+                break-inside: avoid;
+            }
+
             .skill-category h3 {
                 font-size: 12px;
                 margin-bottom: 4px;
@@ -455,9 +530,11 @@
                 line-height: 1.3;
             }
 
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+            /* ── Certifications ── */
+            .certifications-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
             }
 
             .certification-tag {
@@ -465,11 +542,25 @@
                 padding: 3px 8px;
                 margin-right: 6px;
                 margin-bottom: 4px;
+                background: #f9fafb !important;
+                border: 1px solid #d1d5db;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                break-inside: avoid;
+            }
+
+            /* ── Personal Projects ── */
+            .personal-projects {
+                display: block;
             }
 
             .personal-project {
                 padding: 8px;
                 margin-bottom: 8px;
+                background: #fafafa !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                break-inside: avoid;
             }
 
             .personal-project h4 {
@@ -486,67 +577,6 @@
                 font-size: 10px;
                 margin-bottom: 4px;
                 line-height: 1.3;
-            }
-
-            .personal-projects {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-
-            @page {
-                margin: 0.3in;
-                size: A4;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            /* Reduce spacing between elements */
-            .project-header {
-                margin-bottom: 2px;
-            }
-
-            .experience-header {
-                margin-bottom: 2px;
-            }
-
-            /* Optimize for better page breaks */
-            .project-item:last-child {
-                margin-bottom: 0;
-            }
-
-            .experience-item:last-child {
-                margin-bottom: 0;
-            }
-
-            /* Use more horizontal space */
-            .contact-info {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 16px;
-                justify-content: flex-start;
-            }
-
-            .tech-stack {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 4px;
-            }
-
-            .certifications-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-
-            /* Reduce header spacing */
-            .header {
-                margin-bottom: 15px;
-            }
-
-            .header .subtitle {
-                margin-bottom: 6px;
             }
         }
 
