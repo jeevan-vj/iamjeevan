@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeevan Wijerathna - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,317 +13,388 @@
         }
 
         body {
-            font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-            line-height: 1.6;
-            color: #1f2937;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #374151;
             background: #ffffff;
             font-size: 13px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        a {
+            color: #374151;
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
-        .header {
-            margin-bottom: 40px;
-        }
-
-        .header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
+        a:hover {
             color: #111827;
         }
 
-        .header .subtitle {
-            font-size: 16px;
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        /* ── Header ── */
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .header .tagline {
+            font-size: 13px;
             color: #6b7280;
-            margin-bottom: 16px;
-            line-height: 1.6;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        .header .location {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 2px;
         }
 
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
-            font-size: 14px;
-            color: #374151;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 12px;
         }
 
-        .contact-info a {
-            color: #374151;
+        .contact-info a,
+        .contact-info span {
+            color: #6b7280;
             text-decoration: none;
+            padding: 2px 0;
         }
 
         .contact-info a:hover {
             color: #111827;
+            text-decoration: underline;
         }
 
+        .contact-info .sep {
+            color: #d1d5db;
+            user-select: none;
+        }
+
+        /* ── Sections ── */
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 28px;
         }
 
         .section-title {
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 15px;
+            font-weight: 700;
             color: #111827;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 8px;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
         }
 
+        /* ── About ── */
+        .about p {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        /* ── Experience ── */
         .experience-item {
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 4px;
-            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
         }
 
-        .job-title {
+        .company-name {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
             color: #111827;
         }
 
         .job-dates {
-            font-size: 14px;
-            color: #6b7280;
-            font-weight: 500;
+            font-size: 12px;
+            color: #9ca3af;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-variant-numeric: tabular-nums;
         }
 
-        .company {
-            font-size: 14px;
+        .job-title {
+            font-size: 13px;
+            font-weight: 500;
             color: #374151;
-            margin-bottom: 12px;
+            margin-top: 1px;
+        }
+
+        .job-location {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 1px;
+        }
+
+        .job-description {
+            margin-top: 6px;
         }
 
         .job-description ul {
-            list-style: none;
+            list-style: disc;
             margin: 0;
-            padding: 0;
+            padding-left: 18px;
         }
 
         .job-description li {
-            margin-bottom: 6px;
-            position: relative;
-            padding-left: 16px;
-            font-size: 14px;
+            font-size: 12px;
+            color: #4b5563;
+            margin-bottom: 2px;
+            line-height: 1.5;
+        }
+
+        /* ── Tech Tags ── */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+
+        .tech-tag {
+            display: inline-flex;
+            align-items: center;
+            background: #f3f4f6;
             color: #374151;
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 1.6;
         }
 
-        .job-description li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #9ca3af;
-        }
-
+        /* ── Projects (under experience) ── */
         .projects {
-            margin-top: 16px;
+            margin-top: 10px;
         }
 
-        .projects-title {
-            font-size: 14px;
+        .projects-label {
+            font-size: 12px;
             font-weight: 600;
-            color: #111827;
-            margin-bottom: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
         }
 
         .project-item {
-            margin-bottom: 16px;
-            padding-left: 12px;
+            margin-bottom: 12px;
+            padding-left: 10px;
             border-left: 2px solid #e5e7eb;
         }
 
-        .project-header {
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-top {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 4px;
-            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
         }
 
         .project-name {
-            font-weight: 500;
-            font-size: 14px;
+            font-weight: 600;
+            font-size: 12px;
             color: #111827;
         }
 
         .project-duration {
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .project-description {
-            font-size: 13px;
-            color: #374151;
-            margin-bottom: 8px;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 8px;
-        }
-
-        .tech-tag {
-            background: #f3f4f6;
-            color: #374151;
-            padding: 2px 8px;
-            border-radius: 4px;
             font-size: 11px;
-            font-weight: 500;
+            color: #9ca3af;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .project-link {
+            display: inline-block;
+            font-size: 11px;
+            color: #6b7280;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            margin-top: 1px;
+        }
+
+        .project-link:hover {
+            color: #111827;
+        }
+
+        .project-desc {
+            font-size: 12px;
+            color: #4b5563;
+            margin-top: 3px;
+            line-height: 1.5;
+        }
+
+        .project-achievements {
+            margin-top: 4px;
         }
 
         .project-achievements ul {
-            list-style: none;
+            list-style: disc;
             margin: 0;
-            padding: 0;
+            padding-left: 16px;
         }
 
         .project-achievements li {
-            margin-bottom: 4px;
-            position: relative;
-            padding-left: 12px;
-            font-size: 13px;
-            color: #374151;
+            font-size: 11px;
+            color: #4b5563;
+            margin-bottom: 1px;
+            line-height: 1.5;
         }
 
-        .project-achievements li:before {
-            content: "‣";
-            position: absolute;
-            left: 0;
-            color: #9ca3af;
-        }
-
+        /* ── Education ── */
         .education-item {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
         }
 
         .education-details h3 {
             font-weight: 600;
             font-size: 14px;
             color: #111827;
-            margin-bottom: 2px;
         }
 
         .education-details p {
-            font-size: 13px;
-            color: #374151;
+            font-size: 12px;
+            color: #4b5563;
+            margin-top: 1px;
         }
 
         .education-year {
-            font-size: 14px;
-            color: #6b7280;
-            font-weight: 500;
+            font-size: 12px;
+            color: #9ca3af;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-variant-numeric: tabular-nums;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
+        /* ── Skills ── */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
         }
 
-        .skill-category h3 {
-            font-weight: 600;
-            font-size: 14px;
-            color: #111827;
-            margin-bottom: 8px;
-        }
-
-        .skill-category p {
-            font-size: 13px;
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            background: #f3f4f6;
             color: #374151;
-            line-height: 1.5;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.6;
         }
 
+        /* ── Certifications ── */
         .certifications-list {
             display: flex;
             flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .cert-tag {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #e5e7eb;
+            color: #374151;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* ── Side Projects ── */
+        .side-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .side-project {
+            border: 1px solid #f3f4f6;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .side-project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
             gap: 8px;
         }
 
-        .certification-tag {
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            color: #374151;
-            padding: 6px 12px;
-            border-radius: 6px;
+        .side-project h4 {
+            font-weight: 600;
             font-size: 13px;
-            font-weight: 500;
-        }
-
-        .additional-info h3 {
-            font-weight: 600;
-            font-size: 14px;
             color: #111827;
-            margin-bottom: 12px;
         }
 
-        .personal-projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .side-project .sp-url {
+            font-size: 11px;
+            color: #9ca3af;
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
-        .personal-project {
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 16px;
-            background: #fafafa;
-        }
-
-        .personal-project h4 {
-            font-weight: 600;
-            font-size: 14px;
-            color: #111827;
-            margin-bottom: 6px;
-        }
-
-        .personal-project .url {
-            font-size: 12px;
+        .side-project .sp-url:hover {
             color: #6b7280;
-            margin-bottom: 8px;
         }
 
-        .personal-project p {
-            font-size: 13px;
-            color: #374151;
-            margin-bottom: 8px;
-            line-height: 1.4;
+        .side-project p {
+            font-size: 12px;
+            color: #4b5563;
+            margin-top: 4px;
+            line-height: 1.5;
         }
 
-        .personal-project .tech-stack {
-            margin-bottom: 0;
+        .side-project .tech-stack {
+            margin-top: 6px;
         }
 
+        /* ── Print ── */
         @media print {
             @page {
-                margin: 0.3in;
+                margin: 0.35in;
                 size: A4;
             }
 
-            /* ── Global resets ── */
             * {
                 box-sizing: border-box;
             }
 
             html, body {
-                font-size: 11px;
+                font-size: 10px;
                 line-height: 1.3;
                 color: #000;
                 margin: 0 !important;
@@ -336,7 +407,6 @@
                 widows: 3;
             }
 
-            /* Prevent browsers from appending URLs after links */
             a[href]::after {
                 content: none !important;
             }
@@ -345,269 +415,119 @@
                 display: none !important;
             }
 
-            /* ── Layout ── */
             .container {
                 max-width: none !important;
                 width: 100% !important;
-                padding: 8px 12px !important;
+                padding: 4px 8px !important;
                 margin: 0 !important;
-                display: block !important;
-                position: static !important;
             }
 
-            /* ── Header ── */
-            .header {
-                margin-bottom: 15px;
-            }
+            .header { margin-bottom: 12px; }
+            .header h1 { font-size: 18px; }
+            .header .tagline { font-size: 10px; }
+            .header .location { font-size: 9px; }
+            .contact-info { font-size: 9px; gap: 6px; }
 
-            .header h1 {
-                font-size: 20px;
-                margin-bottom: 4px;
-            }
-
-            .header .subtitle {
-                font-size: 12px;
-                margin-bottom: 6px;
-                line-height: 1.4;
-            }
-
-            .contact-info {
-                font-size: 11px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 16px;
-                justify-content: flex-start;
-            }
-
-            /* ── Sections ── */
-            .section {
-                margin-bottom: 16px;
-            }
-
+            .section { margin-bottom: 14px; }
             .section-title {
-                font-size: 14px;
-                margin-bottom: 12px;
-                padding-bottom: 4px;
-                break-after: avoid;
-            }
-
-            /* ── Experience ── */
-            .experience-item {
-                margin-bottom: 14px;
-            }
-
-            .experience-item:last-child {
-                margin-bottom: 0;
-            }
-
-            .experience-header {
-                margin-bottom: 2px;
-                break-after: avoid;
-            }
-
-            .job-title {
-                font-size: 14px;
-            }
-
-            .job-dates {
-                font-size: 11px;
-            }
-
-            .company {
                 font-size: 12px;
                 margin-bottom: 8px;
                 break-after: avoid;
             }
 
-            .job-description li {
-                font-size: 11px;
-                margin-bottom: 3px;
-            }
+            .about p { font-size: 10px; }
 
-            /* ── Projects ── */
-            .projects {
-                margin-top: 10px;
-            }
+            .experience-item { margin-bottom: 12px; }
+            .company-name { font-size: 11px; }
+            .job-title { font-size: 10px; }
+            .job-dates { font-size: 9px; }
+            .job-location { font-size: 9px; }
+            .job-description li { font-size: 9px; margin-bottom: 1px; }
 
-            .projects-title {
-                font-size: 12px;
-                margin-bottom: 8px;
-                break-after: avoid;
-            }
+            .experience-header { break-after: avoid; }
+            .company-name { break-after: avoid; }
+
+            .projects { margin-top: 6px; }
+            .projects-label { font-size: 9px; margin-bottom: 4px; }
 
             .project-item {
-                margin-bottom: 10px;
-                padding-left: 8px;
-                border-left-color: #000;
+                margin-bottom: 8px;
+                padding-left: 6px;
                 break-inside: avoid;
+                border-left-color: #666;
             }
-
-            .project-item:last-child {
-                margin-bottom: 0;
-            }
-
-            .project-header {
-                margin-bottom: 2px;
-            }
-
-            .project-name {
-                font-size: 12px;
-            }
-
-            .project-duration {
-                font-size: 10px;
-            }
-
-            .project-link {
-                font-size: 10px;
-                color: #374151;
-                text-decoration: none;
-            }
-
-            .project-description {
-                font-size: 11px;
-                margin-bottom: 4px;
-            }
-
-            .project-achievements li {
-                font-size: 10px;
-                margin-bottom: 2px;
-            }
-
-            /* ── Tech tags & badges ── */
-            .tech-stack {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 4px;
-            }
+            .project-name { font-size: 10px; }
+            .project-duration { font-size: 8px; }
+            .project-link { font-size: 8px; }
+            .project-desc { font-size: 9px; margin-top: 2px; }
+            .project-achievements li { font-size: 8px; }
 
             .tech-tag {
-                font-size: 9px;
-                padding: 1px 6px;
-                margin-right: 4px;
-                margin-bottom: 2px;
-                background: #f3f4f6 !important;
+                font-size: 7px;
+                padding: 0 4px;
+                background: #f0f0f0 !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
 
-            /* ── Education ── */
-            .education-item {
-                margin-bottom: 8px;
+            .tech-stack { gap: 2px; margin-top: 3px; }
+
+            .education-details h3 { font-size: 11px; }
+            .education-details p { font-size: 9px; }
+            .education-year { font-size: 9px; }
+            .education-item { break-inside: avoid; }
+
+            .skill-tag {
+                font-size: 8px;
+                padding: 0 5px;
+                background: #f0f0f0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .skills-list { gap: 3px; }
+
+            .cert-tag {
+                font-size: 8px;
+                padding: 0 5px;
                 break-inside: avoid;
             }
+            .certifications-list { gap: 3px; }
 
-            .education-details h3 {
-                font-size: 12px;
-            }
-
-            .education-details p {
-                font-size: 11px;
-            }
-
-            .education-year {
-                font-size: 11px;
-            }
-
-            /* ── Skills ── */
-            .skills-grid {
+            .side-projects {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                gap: 8px;
             }
-
-            .skill-category {
+            .side-project {
+                padding: 6px;
                 break-inside: avoid;
+                border-color: #ddd;
             }
-
-            .skill-category h3 {
-                font-size: 12px;
-                margin-bottom: 4px;
-            }
-
-            .skill-category p {
-                font-size: 10px;
-                line-height: 1.3;
-            }
-
-            /* ── Certifications ── */
-            .certifications-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-
-            .certification-tag {
-                font-size: 10px;
-                padding: 3px 8px;
-                margin-right: 6px;
-                margin-bottom: 4px;
-                background: #f9fafb !important;
-                border: 1px solid #d1d5db;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                break-inside: avoid;
-            }
-
-            /* ── Personal Projects ── */
-            .personal-projects {
-                display: block;
-            }
-
-            .personal-project {
-                padding: 8px;
-                margin-bottom: 8px;
-                background: #fafafa !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                break-inside: avoid;
-            }
-
-            .personal-project h4 {
-                font-size: 12px;
-                margin-bottom: 4px;
-            }
-
-            .personal-project .url {
-                font-size: 10px;
-                margin-bottom: 4px;
-            }
-
-            .personal-project p {
-                font-size: 10px;
-                margin-bottom: 4px;
-                line-height: 1.3;
-            }
+            .side-project h4 { font-size: 10px; }
+            .side-project .sp-url { font-size: 8px; }
+            .side-project p { font-size: 8px; margin-top: 2px; }
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 16px;
-            }
+        @media (max-width: 640px) {
+            .container { padding: 24px 16px; }
 
             .experience-header,
-            .project-header,
+            .project-top,
             .education-item {
                 flex-direction: column;
                 align-items: flex-start;
             }
 
-            .job-dates,
-            .project-duration,
-            .education-year {
-                margin-top: 2px;
-            }
-
             .contact-info {
                 flex-direction: column;
-                gap: 8px;
+                gap: 4px;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .contact-info .sep {
+                display: none;
             }
 
-            .personal-projects {
+            .side-projects {
                 grid-template-columns: 1fr;
             }
         }
@@ -615,26 +535,41 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header class="header">
             <h1>Jeevan Wijerathna</h1>
-            <p class="subtitle">Results-driven Software Engineer with over 10 years of experience in architecting, designing, and delivering scalable, cloud-native solutions. Certified in AWS, Azure, and Sitecore, with deep expertise in .NET technologies, backend and frontend development, and cloud infrastructure. Proven leader in driving technical strategy, mentoring engineering teams, and modernizing legacy systems. Passionate about clean code, Domain-Driven Design, and building maintainable, high-quality software solutions</p>
+            <p class="tagline">Results-driven Software Engineer with over 10 years of experience in architecting, designing, and delivering scalable, cloud-native solutions. Certified in AWS, Azure, and Sitecore, with deep expertise in .NET technologies, backend and frontend development, and cloud infrastructure.</p>
+            <p class="location">Auckland, New Zealand</p>
             <div class="contact-info">
-                <span>Jeevan90wijerathna@gmail.com</span>
-                <span>+64 22 67 33 146</span>
-                <a href="https://iamjeevan.com">iamjeevan.com</a>
-                <span>Auckland, New Zealand</span>
+                <a href="mailto:Jeevan90wijerathna@gmail.com">Jeevan90wijerathna@gmail.com</a>
+                <span class="sep">/</span>
+                <a href="tel:+64226733146">+64 22 67 33 146</a>
+                <span class="sep">/</span>
+                <a href="https://iamjeevan.com" target="_blank">iamjeevan.com</a>
+                <span class="sep">/</span>
+                <a href="https://www.linkedin.com/in/jeevanwijerathna/" target="_blank">LinkedIn</a>
             </div>
         </header>
 
+        <!-- About -->
         <section class="section">
-            <h2 class="section-title">Experience</h2>
-            
+            <h2 class="section-title">About</h2>
+            <div class="about">
+                <p>Proven leader in driving technical strategy, mentoring engineering teams, and modernizing legacy systems. Passionate about clean code, Domain-Driven Design, and building maintainable, high-quality software solutions. Experienced in leading cross-functional teams, making architectural decisions, and delivering enterprise-grade cloud-native applications.</p>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+
+            <!-- Datacom - Technical Lead -->
             <div class="experience-item">
                 <div class="experience-header">
-                    <h3 class="job-title">Technical Lead</h3>
+                    <span class="company-name">Datacom</span>
                     <span class="job-dates">2023 - Present</span>
                 </div>
-                <p class="company">Datacom, New Zealand</p>
+                <div class="job-title">Technical Lead</div>
                 <div class="job-description">
                     <ul>
                         <li>Architected and designed scalable solutions with cross-functional teams, driving technical strategy for critical business applications</li>
@@ -646,50 +581,55 @@
                         <li>Modernized legacy applications by transitioning to cloud-native, microservices, and event-driven architectures</li>
                     </ul>
                 </div>
-                
+                <div class="tech-stack">
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Terraform</span>
+                    <span class="tech-tag">Flutter</span>
+                </div>
+
                 <div class="projects">
-                    <h4 class="projects-title">Key Projects</h4>
+                    <div class="projects-label">Key Projects</div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Rockgas Gas Order Application</h5>
+                        <div class="project-top">
+                            <span class="project-name">Rockgas Gas Order Application</span>
                             <span class="project-duration">Ongoing</span>
-                        <a class="project-link" href="https://www.rockgas.app/" target="_blank" rel="noopener noreferrer">www.rockgas.app</a>
                         </div>
-                        <p class="project-description">Leading the design and implementation of a comprehensive gas order management system with cross-platform capabilities.</p>
+                        <a class="project-link" href="https://www.rockgas.app/" target="_blank">www.rockgas.app</a>
+                        <p class="project-desc">Leading the design and implementation of a comprehensive gas order management system with cross-platform capabilities.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">.NET</span>
                             <span class="tech-tag">Flutter</span>
                             <span class="tech-tag">Mobile Apps</span>
-                            <span class="tech-tag">Web</span>
                             <span class="tech-tag">Azure</span>
                             <span class="tech-tag">Terraform</span>
-                            <span class="tech-tag">API</span>
                             <span class="tech-tag">Entity Framework</span>
                         </div>
                         <div class="project-achievements">
                             <ul>
-                                <li>Architected scalable cross-platform solution with Flutter mobile apps .Net backend</li>
+                                <li>Architected scalable cross-platform solution with Flutter mobile apps and .NET backend</li>
                                 <li>Implemented Infrastructure as Code using Terraform for automated Azure resource provisioning</li>
                                 <li>Designed robust API architecture to support multiple client applications</li>
                             </ul>
                         </div>
                     </div>
+
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Southern Cross Applications</h5>
+                        <div class="project-top">
+                            <span class="project-name">Southern Cross Applications</span>
                             <span class="project-duration">Ongoing</span>
                         </div>
-                        <p class="project-description">Architected and delivered modernized business-critical applications with focus on React frontend excellence and cloud-native solutions.</p>
+                        <p class="project-desc">Architected and delivered modernized business-critical applications with focus on React frontend excellence and cloud-native solutions.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">.NET</span>
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">WEB-API</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Redux</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">Azure</span>
-                            <span class="tech-tag">Angular</span>
                             <span class="tech-tag">Sitecore</span>
                         </div>
                         <div class="project-achievements">
@@ -701,13 +641,13 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Fonterra Inventory Management System</h5>
+                        <div class="project-top">
+                            <span class="project-name">Fonterra Inventory Management System</span>
                             <span class="project-duration">Ongoing</span>
                         </div>
-                        <p class="project-description">Trace It is an inventory management system for Fonterra, New Zealand's largest dairy company.</p>
+                        <p class="project-desc">Trace It is an inventory management system for Fonterra, New Zealand's largest dairy company.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Oracle Apex</span>
                             <span class="tech-tag">PL/SQL</span>
@@ -721,15 +661,13 @@
                     </div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">PGDB Application Portal</h5>
+                        <div class="project-top">
+                            <span class="project-name">PGDB Application Portal</span>
                             <span class="project-duration">Ongoing</span>
                         </div>
-                        <p class="project-description">Developed a portal for managing licenses and certifications for NZ practitioners.</p>
+                        <p class="project-desc">Developed a portal for managing licenses and certifications for NZ practitioners.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">.NET</span>
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">WEB-API</span>
                             <span class="tech-tag">Identity Server</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Redux</span>
@@ -743,21 +681,18 @@
                         </div>
                     </div>
 
-                
-
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Dairybase Modernization</h5>
+                        <div class="project-top">
+                            <span class="project-name">Dairybase Modernization</span>
                             <span class="project-duration">Completed</span>
                         </div>
-                        <p class="project-description">Modernized legacy Java application with comprehensive authentication overhaul and seamless API integration.</p>
+                        <p class="project-desc">Modernized legacy Java application with comprehensive authentication overhaul and seamless API integration.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Azure B2C</span>
                             <span class="tech-tag">Azure Front Door</span>
                             <span class="tech-tag">APIM</span>
                             <span class="tech-tag">Azure Functions</span>
-                            <span class="tech-tag">API</span>
                         </div>
                         <div class="project-achievements">
                             <ul>
@@ -767,17 +702,16 @@
                             </ul>
                         </div>
                     </div>
-
-                   
                 </div>
             </div>
 
+            <!-- Kinesso -->
             <div class="experience-item">
                 <div class="experience-header">
-                    <h3 class="job-title">Senior Software Engineer</h3>
+                    <span class="company-name">Kinesso</span>
                     <span class="job-dates">2020 - 2022</span>
                 </div>
-                <p class="company">Kinesso, Malaysia</p>
+                <div class="job-title">Senior Software Engineer</div>
                 <div class="job-description">
                     <ul>
                         <li>Designed and implemented modernized legacy applications using microservices architecture</li>
@@ -787,23 +721,30 @@
                         <li>Monitored application performance using DataDog and implemented CI/CD pipelines</li>
                     </ul>
                 </div>
-                
+                <div class="tech-stack">
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">GRPC</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Jenkins</span>
+                    <span class="tech-tag">Snowflake</span>
+                </div>
+
                 <div class="projects">
-                    <h4 class="projects-title">Key Projects</h4>
-                    
+                    <div class="projects-label">Key Projects</div>
+
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Magnifiq</h5>
+                        <div class="project-top">
+                            <span class="project-name">Magnifiq</span>
                             <span class="project-duration">2 years</span>
                         </div>
-                        <p class="project-description">Developed a business intelligence analytics tool with custom ETL and reporting capabilities.</p>
+                        <p class="project-desc">Developed a business intelligence analytics tool with custom ETL and reporting capabilities.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">.NET</span>
                             <span class="tech-tag">GRPC</span>
                             <span class="tech-tag">SQL Server</span>
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Jenkins</span>
                             <span class="tech-tag">Snowflake</span>
                         </div>
                         <div class="project-achievements">
@@ -815,14 +756,13 @@
                     </div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Apollo ETL Platform</h5>
+                        <div class="project-top">
+                            <span class="project-name">Apollo ETL Platform</span>
                             <span class="project-duration">1 year</span>
                         </div>
-                        <p class="project-description">Built an ETL orchestration platform using Dagster and developed a dashboard UI.</p>
+                        <p class="project-desc">Built an ETL orchestration platform using Dagster and developed a dashboard UI.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">.NET</span>
-                            <span class="tech-tag">Web-API</span>
                             <span class="tech-tag">Dagster</span>
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">AWS</span>
@@ -838,12 +778,13 @@
                 </div>
             </div>
 
+            <!-- Sitecore -->
             <div class="experience-item">
                 <div class="experience-header">
-                    <h3 class="job-title">Software Engineer</h3>
-                    <span class="job-dates">2017 - 2022</span>
+                    <span class="company-name">Sitecore</span>
+                    <span class="job-dates">2017 - 2020</span>
                 </div>
-                <p class="company">Sitecore, Malaysia</p>
+                <div class="job-title">Software Engineer</div>
                 <div class="job-description">
                     <ul>
                         <li>Developed Sitecore platform modules to enhance CMS functionality with Azure Storage and CDN support</li>
@@ -852,24 +793,31 @@
                         <li>Participated in R&D, sprint planning, and cross-functional team collaboration</li>
                     </ul>
                 </div>
-                
+                <div class="tech-stack">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">ARM Templates</span>
+                    <span class="tech-tag">PowerShell</span>
+                </div>
+
                 <div class="projects">
-                    <h4 class="projects-title">Key Projects</h4>
-                    
+                    <div class="projects-label">Key Projects</div>
+
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Sitecore Azure Marketplace</h5>
+                        <div class="project-top">
+                            <span class="project-name">Sitecore Azure Marketplace</span>
                             <span class="project-duration">2 years</span>
                         </div>
-                        <a class="project-link" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/sitecore.sitecore-xp" target="_blank" rel="noopener noreferrer">Azure Marketplace</a>
-                        <p class="project-description">Developed a comprehensive tool to enable users to deploy Sitecore directly into their Azure subscription through the Azure portal, streamlining the deployment process for enterprise customers.</p>
+                        <a class="project-link" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/sitecore.sitecore-xp" target="_blank">Azure Marketplace</a>
+                        <p class="project-desc">Developed a comprehensive tool to enable users to deploy Sitecore directly into their Azure subscription through the Azure portal.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Angular</span>
                             <span class="tech-tag">.NET API</span>
                             <span class="tech-tag">ARM Templates</span>
                             <span class="tech-tag">Graph APIs</span>
                             <span class="tech-tag">Azure PaaS</span>
-                            <span class="tech-tag">Azure Portal</span>
                         </div>
                         <div class="project-achievements">
                             <ul>
@@ -882,18 +830,17 @@
                     </div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Sitecore Blob Storage Module</h5>
+                        <div class="project-top">
+                            <span class="project-name">Sitecore Blob Storage Module</span>
                             <span class="project-duration">1 year</span>
                         </div>
-                        <a class="project-link" href="https://doc.sitecore.com/xp/developers/latest/sitecore-experience-manager/en/sitecore-blob-storage.html" target="_blank" rel="noopener noreferrer">Documentation</a>
-                        <p class="project-description">Developed a Sitecore module to integrate Azure Blob Storage for media asset management, providing scalable cloud storage solutions for Sitecore implementations.</p>
+                        <a class="project-link" href="https://doc.sitecore.com/xp/developers/latest/sitecore-experience-manager/en/sitecore-blob-storage.html" target="_blank">Documentation</a>
+                        <p class="project-desc">Developed a Sitecore module to integrate Azure Blob Storage for media asset management.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">.NET</span>
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">Azure Blob Storage</span>
                             <span class="tech-tag">Sitecore</span>
-                            <span class="tech-tag">Media Library</span>
                         </div>
                         <div class="project-achievements">
                             <ul>
@@ -905,18 +852,17 @@
                     </div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Sitecore Content Delivery Network (CDN)</h5>
+                        <div class="project-top">
+                            <span class="project-name">Sitecore Content Delivery Network (CDN)</span>
                             <span class="project-duration">1 year</span>
                         </div>
-                        <a class="project-link" href="https://doc.sitecore.com/xp/developers/latest/sitecore-experience-manager/en/content-delivery-network.html" target="_blank" rel="noopener noreferrer">Documentation</a>
-                        <p class="project-description">Built CDN integration capabilities for Sitecore to enhance content delivery performance and global scalability for enterprise websites.</p>
+                        <a class="project-link" href="https://doc.sitecore.com/xp/developers/latest/sitecore-experience-manager/en/content-delivery-network.html" target="_blank">Documentation</a>
+                        <p class="project-desc">Built CDN integration capabilities for Sitecore to enhance content delivery performance and global scalability.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">.NET</span>
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">Azure CDN</span>
                             <span class="tech-tag">Sitecore</span>
-                            <span class="tech-tag">Content Delivery</span>
                         </div>
                         <div class="project-achievements">
                             <ul>
@@ -928,12 +874,12 @@
                     </div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Sitecore Self Service Support Portal</h5>
+                        <div class="project-top">
+                            <span class="project-name">Sitecore Self Service Support Portal</span>
                             <span class="project-duration">1 year</span>
                         </div>
-                        <a class="project-link" href="https://support.sitecore.com/csm" target="_blank" rel="noopener noreferrer">support.sitecore.com</a>
-                        <p class="project-description">Built a self-service support portal for Sitecore customers using ServiceNow, enabling streamlined issue reporting and resolution tracking.</p>
+                        <a class="project-link" href="https://support.sitecore.com/csm" target="_blank">support.sitecore.com</a>
+                        <p class="project-desc">Built a self-service support portal for Sitecore customers using ServiceNow.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">ServiceNow</span>
                             <span class="tech-tag">AngularJS</span>
@@ -950,12 +896,13 @@
                 </div>
             </div>
 
+            <!-- CMS -->
             <div class="experience-item">
                 <div class="experience-header">
-                    <h3 class="job-title">Software Engineer</h3>
+                    <span class="company-name">CMS Pvt Ltd</span>
                     <span class="job-dates">2015 - 2017</span>
                 </div>
-                <p class="company">CMS Pvt Ltd, Colombo, Sri Lanka</p>
+                <div class="job-title">Software Engineer</div>
                 <div class="job-description">
                     <ul>
                         <li>Developed and maintained scalable e-commerce solutions for European markets</li>
@@ -963,17 +910,24 @@
                         <li>Optimized database performance and implemented caching mechanisms</li>
                     </ul>
                 </div>
-                
+                <div class="tech-stack">
+                    <span class="tech-tag">ASP.NET MVC</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">KnockoutJS</span>
+                    <span class="tech-tag">Solr</span>
+                </div>
+
                 <div class="projects">
-                    <h4 class="projects-title">Key Projects</h4>
+                    <div class="projects-label">Key Projects</div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Redcorp B2B E-Commerce Platform</h5>
+                        <div class="project-top">
+                            <span class="project-name">Redcorp B2B E-Commerce Platform</span>
                             <span class="project-duration">2 years</span>
                         </div>
-                        <a class="project-link" href="https://redcorp.com/" target="_blank" rel="noopener noreferrer">redcorp.com</a>
-                        <p class="project-description">Developed a B2B e-commerce platform serving European markets with storefront and backend solutions for enterprise customers.</p>
+                        <a class="project-link" href="https://redcorp.com/" target="_blank">redcorp.com</a>
+                        <p class="project-desc">Developed a B2B e-commerce platform serving European markets with storefront and backend solutions.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">ASP.NET MVC5</span>
                             <span class="tech-tag">C#</span>
@@ -981,7 +935,6 @@
                             <span class="tech-tag">Dapper ORM</span>
                             <span class="tech-tag">KnockoutJS</span>
                             <span class="tech-tag">Solr</span>
-                            <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">SASS</span>
                         </div>
                         <div class="project-achievements">
@@ -996,12 +949,13 @@
                 </div>
             </div>
 
+            <!-- Bileeta -->
             <div class="experience-item">
                 <div class="experience-header">
-                    <h3 class="job-title">Software Engineer</h3>
-                    <span class="job-dates">February 2013 - December 2014</span>
+                    <span class="company-name">Bileeta Pvt Ltd</span>
+                    <span class="job-dates">2013 - 2014</span>
                 </div>
-                <p class="company">Bileeta Pvt Ltd, Sri Lanka</p>
+                <div class="job-title">Software Engineer</div>
                 <div class="job-description">
                     <ul>
                         <li>Contributed to the development of an award-winning cloud ERP solution</li>
@@ -1009,24 +963,29 @@
                         <li>Optimized database performance and implemented stored procedures</li>
                     </ul>
                 </div>
-                
+                <div class="tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">SSRS</span>
+                    <span class="tech-tag">SaaS</span>
+                </div>
+
                 <div class="projects">
-                    <h4 class="projects-title">Key Projects</h4>
+                    <div class="projects-label">Key Projects</div>
 
                     <div class="project-item">
-                        <div class="project-header">
-                            <h5 class="project-name">Entution - Cloud ERP Platform</h5>
+                        <div class="project-top">
+                            <span class="project-name">Entution - Cloud ERP Platform</span>
                             <span class="project-duration">2 years</span>
                         </div>
-                        <a class="project-link" href="https://bileeta.com/" target="_blank" rel="noopener noreferrer">bileeta.com</a>
-                        <p class="project-description">Contributed to an award-winning SaaS cloud ERP solution providing enterprise resource planning capabilities for businesses.</p>
+                        <a class="project-link" href="https://bileeta.com/" target="_blank">bileeta.com</a>
+                        <p class="project-desc">Contributed to an award-winning SaaS cloud ERP solution providing enterprise resource planning capabilities.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">.NET</span>
                             <span class="tech-tag">SQL Server</span>
                             <span class="tech-tag">SSRS</span>
-                            <span class="tech-tag">Cloud</span>
-                            <span class="tech-tag">SaaS</span>
                         </div>
                         <div class="project-achievements">
                             <ul>
@@ -1041,6 +1000,7 @@
             </div>
         </section>
 
+        <!-- Education -->
         <section class="section">
             <h2 class="section-title">Education</h2>
             <div class="education-item">
@@ -1048,74 +1008,67 @@
                     <h3>National School of Business Management, Sri Lanka</h3>
                     <p>Bachelor of Science in Management Information Systems</p>
                 </div>
-                <span class="education-year">2014</span>
+                <span class="education-year">2010 - 2014</span>
             </div>
         </section>
 
+        <!-- Skills -->
         <section class="section">
             <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Backend & Core Technologies</h3>
-                    <p>C#/.NET Core, ASP.NET Web API, TypeScript, JavaScript, Java, RESTful APIs, Web Services</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Architecture Patterns & Design</h3>
-                    <p>CQRS,  Domain-Driven Design, Service Oriented Architecture, Clean/Verticle Slice Architecture, SOLID Principles</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Cloud & Infrastructure</h3>
-                    <p>Azure, AWS, Public Cloud, Hybrid Cloud Platforms, Docker, Kubernetes, Microservices, Terraform, Bicep, ARM, Infrastructure as Code</p>
-                </div>
-                <div class="skill-category">
-                    <h3>DevSecOps & CI/CD</h3>
-                    <p>DevSecOps Practices, Azure DevOps, GitHub Actions, Jenkins, TeamCity, Azure Pipelines, Platform Security Standards</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Systems Integration & APIs</h3>
-                    <p>REST APIs, Web Services, Systems Integration, Enterprise Application Integration, API Design, Service Orchestration</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Technical Leadership & Collaboration</h3>
-                    <p>Technical Leadership through Influence, Cross-functional Team Collaboration, Developer Mentoring, Tech Stack Decision Making, Agile Delivery</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Enterprise & Platform Development</h3>
-                    <p>Enterprise Software Modernization, Legacy System Migration, Platform Architecture, Scalable Solutions</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Emerging Technologies & AI</h3>
-                    <p>AI Workflows,  Modern Development Practices, Innovation Leadership</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases & Storage</h3>
-                    <p>SQL Server, PostgreSQL, Oracle, Azure Storage, Azure Cosmos DB, Database Performance Optimization</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Quality & Testing</h3>
-                    <p>XUnit, SpecFlow, TDD, Clean Code, Code Reviews, Quality Assurance, Testing Strategies</p>
-                </div>
+            <div class="skills-list">
+                <span class="skill-tag">C#/.NET Core</span>
+                <span class="skill-tag">ASP.NET Web API</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Angular</span>
+                <span class="skill-tag">Azure</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">CQRS</span>
+                <span class="skill-tag">Domain-Driven Design</span>
+                <span class="skill-tag">Clean Architecture</span>
+                <span class="skill-tag">SOLID Principles</span>
+                <span class="skill-tag">Azure DevOps</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">SQL Server</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Cosmos DB</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Systems Integration</span>
+                <span class="skill-tag">TDD</span>
+                <span class="skill-tag">Technical Leadership</span>
+                <span class="skill-tag">Agile/SAFe</span>
             </div>
         </section>
 
+        <!-- Certifications -->
         <section class="section">
             <h2 class="section-title">Certifications</h2>
             <div class="certifications-list">
-                <span class="certification-tag">AWS Certified Solution Architect Associate</span>
-                <span class="certification-tag">AWS Certified Developer</span>
-                <span class="certification-tag">Azure Certified Developer</span>
-                <span class="certification-tag">Sitecore 9 Certified Developer</span>
-                <span class="certification-tag">SAFe 4.0 Practitioner</span>
+                <span class="cert-tag">AWS Certified Solution Architect Associate</span>
+                <span class="cert-tag">AWS Certified Developer</span>
+                <span class="cert-tag">Azure Certified Developer</span>
+                <span class="cert-tag">Sitecore 9 Certified Developer</span>
+                <span class="cert-tag">SAFe 4.0 Practitioner</span>
             </div>
         </section>
 
+        <!-- Side Projects -->
         <section class="section">
-            <h2 class="section-title">Personal Projects</h2>
-            <div class="personal-projects">
-                <div class="personal-project">
-                    <h4>Resume Pro</h4>
-                    <p class="url">resumepro.iamjeevan.com</p>
-                    <p>Built an ATS-friendly resume generator using Next.js, React, and Tailwind CSS. Implemented modern UI with real-time preview and multiple templates.</p>
+            <h2 class="section-title">Side Projects</h2>
+            <div class="side-projects">
+                <div class="side-project">
+                    <div class="side-project-header">
+                        <h4>Resume Pro</h4>
+                        <a class="sp-url" href="https://resumepro.iamjeevan.com" target="_blank">resumepro.iamjeevan.com</a>
+                    </div>
+                    <p>ATS-friendly resume generator with real-time preview and multiple templates.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Next.js</span>
@@ -1124,10 +1077,12 @@
                     </div>
                 </div>
 
-                <div class="personal-project">
-                    <h4>Vanish Notes</h4>
-                    <p class="url">vanishnotes.iamjeevan.com</p>
-                    <p>Developed a self-destructive note sharing application. Implemented end-to-end encryption and auto-deletion features.</p>
+                <div class="side-project">
+                    <div class="side-project-header">
+                        <h4>Vanish Notes</h4>
+                        <a class="sp-url" href="https://vanishnotes.iamjeevan.com" target="_blank">vanishnotes.iamjeevan.com</a>
+                    </div>
+                    <p>Self-destructive note sharing app with end-to-end encryption and auto-deletion.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Next.js</span>
                         <span class="tech-tag">Node.js</span>
@@ -1136,10 +1091,12 @@
                     </div>
                 </div>
 
-                <div class="personal-project">
-                    <h4>NZ Salary Calculator</h4>
-                    <p class="url">nzsalarycalculator.iamjeevan.com</p>
-                    <p>Created a comprehensive salary calculator for New Zealand employees. Includes tax calculations, KiwiSaver, and other deductions.</p>
+                <div class="side-project">
+                    <div class="side-project-header">
+                        <h4>NZ Salary Calculator</h4>
+                        <a class="sp-url" href="https://nzsalarycalculator.iamjeevan.com" target="_blank">nzsalarycalculator.iamjeevan.com</a>
+                    </div>
+                    <p>Comprehensive salary calculator for NZ employees with tax, KiwiSaver, and deductions.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">TypeScript</span>
@@ -1147,10 +1104,12 @@
                     </div>
                 </div>
 
-                <div class="personal-project">
-                    <h4>Flash Card Fest</h4>
-                    <p class="url">flash-card-fest.netlify.app</p>
-                    <p>Designed an AI-powered study flash card generator. Integrated with OpenAI API for automated content generation.</p>
+                <div class="side-project">
+                    <div class="side-project-header">
+                        <h4>Flash Card Fest</h4>
+                        <a class="sp-url" href="https://flash-card-fest.netlify.app" target="_blank">flash-card-fest.netlify.app</a>
+                    </div>
+                    <p>AI-powered study flash card generator integrated with OpenAI API.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">OpenAI API</span>
@@ -1159,24 +1118,39 @@
                     </div>
                 </div>
 
-                <div class="personal-project">
-                    <h4>WindowSnap</h4>
-                    <p class="url">windowsnap.vercel.app</p>
-                    <p>Native macOS window management application with lightning-fast keyboard shortcuts for snapping windows to precise grid positions. Features multi-monitor support, accessibility compliance, and sleep/wake recovery.</p>
+                <div class="side-project">
+                    <div class="side-project-header">
+                        <h4>WindowSnap</h4>
+                        <a class="sp-url" href="https://windowsnap.vercel.app" target="_blank">windowsnap.vercel.app</a>
+                    </div>
+                    <p>Native macOS window management app with keyboard shortcuts for snapping windows to grid positions.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Swift</span>
                         <span class="tech-tag">AppKit</span>
                         <span class="tech-tag">Accessibility APIs</span>
                         <span class="tech-tag">Core Graphics</span>
-                        <span class="tech-tag">macOS</span>
+                    </div>
+                </div>
+
+                <div class="side-project">
+                    <div class="side-project-header">
+                        <h4>Kiwi Lankan Fitness</h4>
+                        <a class="sp-url" href="https://www.kiwilankanfitness.com" target="_blank">kiwilankanfitness.com</a>
+                    </div>
+                    <p>Professional fitness coaching website for a 2x NZ Champion personal trainer with transformation gallery, booking integration, and member portal.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive Design</span>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <div class="no-print" style="text-align: center; margin-top: 40px; padding: 20px; background: #f9fafb; border-top: 1px solid #e5e7eb;">
-        <button onclick="window.print()" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 14px;">
+    <div class="no-print" style="text-align: center; padding: 20px; border-top: 1px solid #f3f4f6;">
+        <button onclick="window.print()" style="background: #111827; color: white; border: none; padding: 10px 20px; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 13px; font-family: inherit;">
             Print Resume
         </button>
     </div>
