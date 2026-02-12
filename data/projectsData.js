@@ -88,6 +88,34 @@ const projectsData = [
     href: 'https://nzsalarycalculator.iamjeevan.com'
   },
   {
+    id: 'database-mcp-server',
+    title: 'Database MCP Server',
+    description: 'Built a Model Context Protocol (MCP) server that enables natural language querying of SQL and NoSQL databases. Translates plain English queries into database-specific queries with built-in safety features, schema introspection, and query optimization suggestions.',
+    shortDescription: 'Natural language database querying via MCP',
+    images: ['/static/images/iamjeevan_logo.png'],
+    imgSrc: '/static/images/iamjeevan_logo.png',
+    techStack: ['TypeScript', 'Node.js', 'MCP SDK', 'PostgreSQL', 'MongoDB', 'MySQL', 'SQL Server'],
+    category: 'Developer Tool',
+    type: 'Personal',
+    status: 'Live',
+    year: 2025,
+    duration: '1 month',
+    team: ['Solo Developer'],
+    metrics: { 
+      databases_supported: '5', 
+      npm_package: 'Published',
+      mcp_tools: '8+' 
+    },
+    links: { 
+      npm: 'https://www.npmjs.com/package/@jeevanvj/database-mcp-server',
+      github: 'https://github.com/jeevan-wijerathna/database-mcp-server'
+    },
+    featured: true,
+    color: '#3B82F6',
+    tags: ['MCP', 'AI', 'Database', 'Natural Language', 'TypeScript'],
+    href: 'https://www.npmjs.com/package/@jeevanvj/database-mcp-server'
+  },
+  {
     id: 'flash-card-fest',
     title: 'Flash Card Fest',
     description: 'Designed an AI-powered study flash card generator integrated with OpenAI API for automated content generation. Helps students create effective study materials with intelligent question generation.',
