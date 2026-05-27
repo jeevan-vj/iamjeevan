@@ -1,6 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 
-const Mermaid = ({ children, className = '' }) => {
+const getMermaidSource = (children) => {
+  if (children == null) return ''
+  if (typeof children === 'string') return children
+  if (typeof children === 'number') return String(children)
+  if (Array.isArray(children)) return children.map(getMermaidSource).join('')
+  if (typeof children === 'object' && children.props?.children != null) {
+    return getMermaidSource(children.props.children)
+  }
+  return ''
+}
+
+const Mermaid = ({ chart, children, className = '' }) => {
   const ref = useRef(null)
   const [isClient, setIsClient] = useState(false)
 
@@ -9,7 +20,8 @@ const Mermaid = ({ children, className = '' }) => {
   }, [])
 
   useEffect(() => {
-    if (!isClient || !ref.current || !children) return
+    const chartDefinition = (chart ?? getMermaidSource(children)).trim()
+    if (!isClient || !ref.current || !chartDefinition) return
 
     const renderChart = async () => {
       try {
@@ -23,7 +35,7 @@ const Mermaid = ({ children, className = '' }) => {
         })
 
         const id = `mermaid-${Math.random().toString(36).substring(2)}`
-        const { svg } = await mermaid.render(id, children)
+        const { svg } = await mermaid.render(id, chartDefinition)
         ref.current.innerHTML = svg
       } catch (error) {
         console.error('Mermaid rendering error:', error)
@@ -37,7 +49,7 @@ const Mermaid = ({ children, className = '' }) => {
     }
 
     renderChart()
-  }, [isClient, children])
+  }, [isClient, chart, children])
 
   if (!isClient) {
     return <div>Loading diagram...</div>

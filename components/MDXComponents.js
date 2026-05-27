@@ -1,32 +1,42 @@
 /* eslint-disable react/display-name */
-import { useMemo } from 'react'
+import { Children, isValidElement, useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import Image from './Image'
 import CustomLink from './Link'
 import Pre from './Pre'
 import Mermaid from './Mermaid'
 
-const CodeBlock = ({ children, className, ...props }) => {
-  // Check if this is a mermaid code block
-  const match = /language-(\w+)/.exec(className || '')
-  const language = match ? match[1] : ''
-  
-  if (language === 'mermaid') {
-    return <Mermaid>{children}</Mermaid>
+const getLanguage = (className = '') => {
+  const match = /language-(\w+)/.exec(className)
+  return match ? match[1] : ''
+}
+
+const PreBlock = ({ children, ...props }) => {
+  const child = Children.count(children) === 1 ? Children.only(children) : null
+
+  if (isValidElement(child) && getLanguage(child.props?.className) === 'mermaid') {
+    return <Mermaid>{child.props.children}</Mermaid>
   }
-  
-  // For non-mermaid code blocks, use the default Pre component
+
+  return <Pre {...props}>{children}</Pre>
+}
+
+const CodeBlock = ({ children, className, ...props }) => {
+  if (getLanguage(className) === 'mermaid') {
+    return <code className={className} {...props}>{children}</code>
+  }
+
   return (
-    <Pre className={className} {...props}>
-      <code className={className}>{children}</code>
-    </Pre>
+    <code className={className} {...props}>
+      {children}
+    </code>
   )
 }
 
 export const MDXComponents = {
   Image,
   a: CustomLink,
-  pre: Pre,
+  pre: PreBlock,
   code: CodeBlock,
   Mermaid,
   wrapper: ({ components, layout, ...rest }) => {
