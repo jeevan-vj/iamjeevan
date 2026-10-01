@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Link from '@/components/Link'
+import ReadingProgress from '@/components/ReadingProgress'
+import TableOfContents from '@/components/TableOfContents'
 import { BlogSeo } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import kebabCase from '@/lib/utils/kebabCase'
@@ -13,7 +15,7 @@ const readMinutes = (frontMatter) => {
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, date, title, tags, headings = [], wordCount = 0, hasMath } = frontMatter
-  const showToc = wordCount > 1500 && headings.length > 0
+  const showToc = headings.length > 0
   const minutes = readMinutes(frontMatter)
 
   return (
@@ -29,6 +31,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           />
         </Head>
       ) : null}
+      <ReadingProgress />
+      {showToc ? <TableOfContents headings={headings} /> : null}
       <article className="article">
         <header>
           <h1 className="page-title">{title}</h1>
@@ -48,7 +52,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           ) : null}
         </header>
         {showToc ? (
-          <nav className="toc" aria-label="Contents">
+          <nav className="toc toc-inline" aria-label="Contents">
             <p>Contents</p>
             <ol>
               {headings.map((heading) => (
