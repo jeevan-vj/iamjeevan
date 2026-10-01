@@ -1,6 +1,7 @@
 const fs = require('fs')
 const globby = require('globby')
 const siteMetadata = require('../data/siteMetadata')
+const work = require('../data/work')
 
 ;(async () => {
   const pages = await globby([
@@ -25,7 +26,11 @@ ${pages
       .replace('.md', '')
       .replace('/feed.xml', '')
     const route = path === '/index' ? '' : path
-    if (page === `pages/404.js` || page === `pages/blog/[...slug].js`) {
+    if (
+      page === 'pages/404.js' ||
+      page === 'pages/blog/[...slug].js' ||
+      page === 'pages/projects.js'
+    ) {
       return
     }
     return `  <url>
@@ -33,6 +38,13 @@ ${pages
   </url>`
   })
   .filter(Boolean)
+  .join('\n')}
+${['/work', ...work.map((item) => `/work/${item.slug}`)]
+  .map(
+    (route) => `  <url>
+    <loc>${siteMetadata.siteUrl}${route}</loc>
+  </url>`
+  )
   .join('\n')}
 </urlset>`
 

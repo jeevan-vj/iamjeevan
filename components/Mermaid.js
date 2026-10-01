@@ -28,9 +28,12 @@ const Mermaid = ({ chart, children, className = '' }) => {
         const mermaid = (await import('mermaid')).default
         
         // Initialize Mermaid
-        mermaid.initialize({ 
-          startOnLoad: false, 
-          theme: 'default',
+        const themeAttr = document.documentElement.getAttribute('data-theme')
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        const dark = themeAttr === 'dark' || (themeAttr !== 'light' && prefersDark)
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: dark ? 'dark' : 'neutral',
           securityLevel: 'loose',
         })
 
