@@ -1,31 +1,27 @@
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
 import { PageSeo } from '@/components/SEO'
-
-export const POSTS_PER_PAGE = 5
+import WritingIndex from '@/components/WritingIndex'
+import siteMetadata from '@/data/siteMetadata'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { getAllTags } from '@/lib/tags'
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
-  const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
-  const pagination = {
-    currentPage: 1,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
-  }
+  const tagCounts = await getAllTags('blog')
+  const tags = Object.keys(tagCounts).sort(
+    (a, b) => tagCounts[b] - tagCounts[a] || a.localeCompare(b)
+  )
 
-  return { props: { initialDisplayPosts, posts, pagination } }
+  return { props: { posts, tags } }
 }
 
-export default function Blog({ posts, initialDisplayPosts, pagination }) {
+export default function Blog({ posts, tags }) {
   return (
     <>
-      <PageSeo title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
-        posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
-        pagination={pagination}
-        title="All Posts"
+      <PageSeo
+        title={`Writing · ${siteMetadata.title}`}
+        description="Notes on problems I have had to solve in production."
       />
+      <WritingIndex posts={posts} tags={tags} />
     </>
   )
 }

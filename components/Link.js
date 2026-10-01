@@ -9,7 +9,7 @@ const CustomLink = ({ href, ...rest }) => {
     return <Link href={href} {...rest} />
   }
 
-  if (isAnchorLink) {
+  if (isAnchorLink || (href && (href.startsWith('mailto:') || href.startsWith('tel:')))) {
     return <a href={href} {...rest} />
   }
 

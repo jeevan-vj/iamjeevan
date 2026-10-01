@@ -1,26 +1,28 @@
 const siteMetadata = {
-  title: "Jeevan WIjerathna's Blog",
+  title: 'Jeevan Wijerathna',
   author: 'Jeevan Wijerathna',
   headerTitle: 'Jeevan Wijerathna',
-  description: '',
+  description:
+    'Technical lead in Auckland. I design systems and write the code, on Azure, .NET, Node, Java, Python and React.',
   language: 'en-us',
   siteUrl: 'https://iamjeevan.com',
   siteRepo: 'https://github.com/jeevan-vj/iamjeevan',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/jeevan.jpg',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: ' https://github.com/jeevan-vj',
+  email: 'Jeevan90wijerathna@gmail.com',
+  github: 'https://github.com/jeevan-vj',
   twitter: 'https://twitter.com/iamjeevanvj',
+  twitterHandle: '@iamjeevanvj',
   facebook: 'https://www.facebook.com/jeevan.wijerathna',
   youtube: 'https://youtube.com',
-  linkedin: ' https://www.linkedin.com/in/jeevanwijerathna/',
-  locale: 'en-US',
+  linkedin: 'https://www.linkedin.com/in/jeevanwijerathna/',
+  locale: 'en-NZ',
   analytics: {
-    // supports plausible, simpleAnalytics or googleAnalytics
-    plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    simpleAnalytics: false, // true or false
-    googleAnalyticsId: 'G-PVCXM9FHWR', // e.g. UA-000000-2 or G-XXXXXXX
+    // Privacy-friendly only. Google Analytics is intentionally unset.
+    plausibleDataDomain: '',
+    simpleAnalytics: false,
+    googleAnalyticsId: '',
   },
   comment: {
     // Select a provider and use the environment variables associated to it

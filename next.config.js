@@ -4,6 +4,20 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/projects',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/blog/page/:page',
+        destination: '/blog',
+        permanent: true,
+      },
+    ]
+  },
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
